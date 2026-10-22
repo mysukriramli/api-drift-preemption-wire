@@ -6,7 +6,7 @@ from core.taxonomy import BreakingChange
 class OpenAPIDiffEngine:
     @staticmethod
     def compute_spec_hash(spec: Dict[str, Any]) -> str:
-        canonical_str = json.dumps(spec, sort_keys=True)
+        canonical_str = json.dumps(spec, sort_keys=True, default=str)
         return hashlib.sha256(canonical_str.encode("utf-8")).hexdigest()
 
     @staticmethod
@@ -39,7 +39,6 @@ class OpenAPIDiffEngine:
         old_endpoints = self.extract_endpoints(old_spec)
         new_endpoints = self.extract_endpoints(new_spec)
 
-        # 1. Detect removed operations
         for key, old_ep in old_endpoints.items():
             if key not in new_endpoints:
                 change = BreakingChange(
@@ -52,7 +51,6 @@ class OpenAPIDiffEngine:
                 breaking_changes.append(change)
                 severity_accum += 9.0
 
-        # 2. Detect newly required parameters on existing operations
         for key, new_ep in new_endpoints.items():
             if key in old_endpoints:
                 old_ep = old_endpoints[key]
