@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "service_id": "github",
+    "service_name": "GitHub REST API",
+    "generated_at_utc": "2026-10-22T06:45:43.846761+00:00",
+    "schema_version": "1.0.0"
+  },
+  "drift_status": {
+    "service_id": "github",
+    "service_name": "GitHub REST API",
+    "spec_url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json",
+    "spec_hash_sha256": "df3d56bae2582e1ef0d464ed0f433a9c8285518775cb55a40e38ce49e4793558",
+    "total_endpoints": 1242,
+    "breaking_changes": [],
+    "sdk_ecosystem": "pypi",
+    "sdk_package": "PyGithub",
+    "sdk_latest_version": "2.10.0",
+    "sdk_release_age_days": 62.9,
+    "drift_score": 0.0,
+    "directive": "SAFE_TO_UPGRADE",
+    "confidence": 0.9,
+    "reason_codes": [
+      "BASELINE_INITIALIZED"
+    ]
+  }
+}
