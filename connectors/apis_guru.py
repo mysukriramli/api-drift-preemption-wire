@@ -1,4 +1,5 @@
 import logging
+import json
 from typing import Dict, Any, Optional
 import requests
 import yaml
@@ -49,7 +50,8 @@ def fetch_openapi_spec(url: str) -> Optional[Dict[str, Any]]:
         res = requests.get(url, headers=headers, timeout=25)
         if res.status_code == 200:
             if url.endswith(".yaml") or url.endswith(".yml"):
-                return yaml.safe_load(res.text)
+                parsed = yaml.safe_load(res.text)
+                return json.loads(json.dumps(parsed, default=str))
             return res.json()
     except Exception as e:
         logging.warning(f"Failed to fetch specification from {url}: {e}")
