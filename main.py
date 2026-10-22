@@ -146,9 +146,8 @@ def run():
             directive = Directive.SAFE_TO_UPGRADE
             confidence = 0.90
 
-        # Persist current specification snapshot for next cycle diff
         with open(cache_path, "w", encoding="utf-8") as f:
-            json.dump(current_spec, f, indent=2)
+            json.dump(current_spec, f, indent=2, default=str)
 
         record = ServiceDriftRecord(
             service_id=service_id,
@@ -168,7 +167,6 @@ def run():
         )
         records.append(record)
 
-        # WRITE VIRAL PER-SERVICE ARTIFACTS
         service_target_dir = os.path.join(SERVICES_DIR, service_id)
         os.makedirs(service_target_dir, exist_ok=True)
 
@@ -183,12 +181,11 @@ def run():
         }
 
         with open(os.path.join(service_target_dir, "today.json"), "w", encoding="utf-8") as f:
-            json.dump(service_payload, f, indent=2)
+            json.dump(service_payload, f, indent=2, default=str)
 
         with open(os.path.join(service_target_dir, "llms.txt"), "w", encoding="utf-8") as f:
             f.write(generate_service_llms_txt(record, now_iso))
 
-    # Sort descending by drift score
     records.sort(key=lambda x: x.drift_score, reverse=True)
 
     month_dir = os.path.join(ARCHIVE_DIR, now.strftime("%Y"), now.strftime("%m"))
@@ -204,9 +201,8 @@ def run():
         "services": [r.model_dump() for r in records]
     }
 
-    # 1. Global registry endpoints
     with open(TODAY_FILE, "w", encoding="utf-8") as f:
-        json.dump(global_payload, f, indent=2)
+        json.dump(global_payload, f, indent=2, default=str)
 
     with open(QUEUE_FILE, "w", encoding="utf-8") as f:
         for r in records:
@@ -215,10 +211,9 @@ def run():
     with open(LLMS_FILE, "w", encoding="utf-8") as f:
         f.write(generate_global_llms_txt(records, now_iso))
 
-    # 2. Historical archive
     archive_file = os.path.join(month_dir, f"{date_str}.json")
     with open(archive_file, "w", encoding="utf-8") as f:
-        json.dump(global_payload, f, indent=2)
+        json.dump(global_payload, f, indent=2, default=str)
 
     logging.info(f"Published global and per-service endpoints for {len(records)} services.")
 
