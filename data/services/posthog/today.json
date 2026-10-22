@@ -2,7 +2,7 @@
   "metadata": {
     "service_id": "posthog",
     "service_name": "PostHog API",
-    "generated_at_utc": "2026-10-22T06:45:43.846761+00:00",
+    "generated_at_utc": "2026-10-22T17:18:56.387356+00:00",
     "schema_version": "1.0.0"
   },
   "drift_status": {
@@ -14,13 +14,13 @@
     "breaking_changes": [],
     "sdk_ecosystem": "pypi",
     "sdk_package": "posthog",
-    "sdk_latest_version": "7.75.0",
-    "sdk_release_age_days": 0.6,
+    "sdk_latest_version": "7.75.4",
+    "sdk_release_age_days": 0.3,
     "drift_score": 0.0,
     "directive": "SAFE_TO_UPGRADE",
     "confidence": 0.9,
     "reason_codes": [
-      "BASELINE_INITIALIZED"
+      "SPEC_EXPANDED_COMPATIBLE"
     ]
   }
 }
