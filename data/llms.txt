@@ -1,5 +1,5 @@
 # API Drift Preemption Wire
-> Last updated: 2026-10-23T05:02:39.488015+00:00 UTC | Upstream Contract Mutation Radar for AI Agents
+> Last updated: 2026-10-23T11:49:40.581694+00:00 UTC | Upstream Contract Mutation Radar for AI Agents
 > Ingest dedicated endpoints per service at data/services/{slug}/today.json
 
 ## Tracked Cloud Service Status
@@ -9,4 +9,4 @@
 | **GitHub REST API** | `0.0` | `SAFE_TO_UPGRADE` | 1,242 | 0 | `PyGithub@2.10.0` | [`data/services/github/today.json`](data/services/github/today.json) |
 | **Stripe API** | `0.0` | `SAFE_TO_UPGRADE` | 612 | 0 | `stripe@16.0.0` | [`data/services/stripe/today.json`](data/services/stripe/today.json) |
 | **Resend Email API** | `0.0` | `SAFE_TO_UPGRADE` | 1 | 0 | `resend@2.50.0` | [`data/services/resend/today.json`](data/services/resend/today.json) |
-| **PostHog API** | `0.0` | `SAFE_TO_UPGRADE` | 1 | 0 | `posthog@7.75.6` | [`data/services/posthog/today.json`](data/services/posthog/today.json) |
+| **PostHog API** | `0.0` | `SAFE_TO_UPGRADE` | 1 | 0 | `posthog@7.75.8` | [`data/services/posthog/today.json`](data/services/posthog/today.json) |
