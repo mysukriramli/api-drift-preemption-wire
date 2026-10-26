@@ -1,11 +1,11 @@
 # API Drift Preemption Wire
-> Last updated: 2026-10-26T13:17:44.186721+00:00 UTC | Upstream Contract Mutation Radar for AI Agents
+> Last updated: 2026-10-26T22:45:43.422684+00:00 UTC | Upstream Contract Mutation Radar for AI Agents
 > Ingest dedicated endpoints per service at data/services/{slug}/today.json
 
 ## Tracked Cloud Service Status
 | Service | Drift Score | Directive | Endpoints | Breaking Changes | Tracked SDK | Service Endpoint |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **OpenAI API** | `0.0` | `SAFE_TO_UPGRADE` | 371 | 0 | `openai@3.37.0` | [`data/services/openai/today.json`](data/services/openai/today.json) |
+| **OpenAI API** | `0.0` | `SAFE_TO_UPGRADE` | 371 | 0 | `openai@3.39.0` | [`data/services/openai/today.json`](data/services/openai/today.json) |
 | **GitHub REST API** | `0.0` | `SAFE_TO_UPGRADE` | 1,242 | 0 | `PyGithub@2.10.0` | [`data/services/github/today.json`](data/services/github/today.json) |
 | **Stripe API** | `0.0` | `SAFE_TO_UPGRADE` | 612 | 0 | `stripe@16.0.0` | [`data/services/stripe/today.json`](data/services/stripe/today.json) |
 | **Resend Email API** | `0.0` | `SAFE_TO_UPGRADE` | 1 | 0 | `resend@2.50.0` | [`data/services/resend/today.json`](data/services/resend/today.json) |

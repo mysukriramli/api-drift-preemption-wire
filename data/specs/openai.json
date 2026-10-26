@@ -23683,7 +23683,7 @@
             "request": {
               "curl": "curl \"https://api.openai.com/v1/organization/external_storage?limit=20&order=desc\" \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\"\n"
             },
-            "response": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"object\": \"organization.external_storage\",\n      \"id\": \"extstorage_abc123\",\n      \"project_id\": \"proj_abc123\",\n      \"provider\": {\n        \"type\": \"aws\",\n        \"account_id\": \"123456789012\",\n        \"region\": \"us-east-1\",\n        \"bucket\": \"customer-logs\",\n        \"role_arn\": \"arn:aws:iam::123456789012:role/OpenAIExternalStorageRole\",\n        \"external_id\": \"proj_abc123\"\n      },\n      \"geography\": \"US\",\n      \"status\": \"validated\",\n      \"created_at\": 1711471533\n    },\n    {\n      \"object\": \"organization.external_storage\",\n      \"id\": \"extstorage_azure123\",\n      \"project_id\": \"proj_azure123\",\n      \"provider\": {\n        \"type\": \"azure\",\n        \"tenant_id\": \"11111111-1111-1111-1111-111111111111\",\n        \"subscription_id\": \"22222222-2222-2222-2222-222222222222\",\n        \"resource_group\": \"customer-rg\",\n        \"account_name\": \"customerstorage\",\n        \"container\": \"openai-data\",\n        \"region\": \"eastus\"\n      },\n      \"geography\": \"US\",\n      \"status\": \"validated\",\n      \"created_at\": 1711471500\n    },\n    {\n      \"object\": \"organization.external_storage\",\n      \"id\": \"extstorage_gcp123\",\n      \"project_id\": \"proj_gcp123\",\n      \"provider\": {\n        \"type\": \"gcp\",\n        \"bucket\": \"customer-gcp-retention\",\n        \"workload_identity_project_number\": \"123456789012\",\n        \"workload_identity_pool_id\": \"customer-pool\",\n        \"workload_identity_provider_id\": \"customer-provider\",\n        \"region\": \"us-central1\",\n        \"audience\": \"proj_gcp123\"\n      },\n      \"geography\": \"US\",\n      \"status\": \"validated\",\n      \"created_at\": 1711471400\n    }\n  ],\n  \"first_id\": \"extstorage_abc123\",\n  \"last_id\": \"extstorage_gcp123\",\n  \"has_more\": false\n}\n"
+            "response": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"object\": \"organization.external_storage\",\n      \"id\": \"extstorage_abc123\",\n      \"project_id\": \"proj_abc123\",\n      \"provider\": {\n        \"type\": \"aws\",\n        \"account_id\": \"123456789012\",\n        \"region\": \"us-east-1\",\n        \"bucket\": \"customer-logs\",\n        \"role_arn\": \"arn:aws:iam::123456789012:role/OpenAIExternalStorageRole\",\n        \"external_id\": \"proj_abc123\"\n      },\n      \"geography\": \"US\",\n      \"status\": \"validated\",\n      \"created_at\": 1711471533\n    },\n    {\n      \"object\": \"organization.external_storage\",\n      \"id\": \"extstorage_azure123\",\n      \"project_id\": \"proj_azure123\",\n      \"provider\": {\n        \"type\": \"azure\",\n        \"tenant_id\": \"11111111-1111-1111-1111-111111111111\",\n        \"subscription_id\": \"22222222-2222-2222-2222-222222222222\",\n        \"resource_group\": \"customer-rg\",\n        \"account_name\": \"customerstorage\",\n        \"container\": \"openai-data\",\n        \"region\": \"eastus\"\n      },\n      \"geography\": \"US\",\n      \"status\": \"validated\",\n      \"created_at\": 1711471500\n    },\n    {\n      \"object\": \"organization.external_storage\",\n      \"id\": \"extstorage_gcp123\",\n      \"project_id\": \"proj_gcp123\",\n      \"provider\": {\n        \"type\": \"gcp\",\n        \"bucket\": \"customer-gcp-retention\",\n        \"workload_identity_project_number\": \"123456789012\",\n        \"workload_identity_pool_id\": \"customer-pool\",\n        \"workload_identity_provider_id\": \"customer-provider\",\n        \"region\": \"us-central1\",\n        \"audience\": \"proj_gcp123\"\n      },\n      \"geography\": \"US\",\n      \"status\": \"validated\",\n      \"created_at\": 1711471400\n    },\n    {\n      \"object\": \"organization.external_storage\",\n      \"id\": \"extstorage_oci123\",\n      \"project_id\": \"proj_oci123\",\n      \"provider\": {\n        \"type\": \"oci\",\n        \"tenancy_ocid\": \"ocid1.tenancy.oc1..example\",\n        \"region\": \"us-ashburn-1\",\n        \"bucket\": \"customer-oci-retention\"\n      },\n      \"geography\": \"US\",\n      \"status\": \"validated\",\n      \"created_at\": 1711471300\n    }\n  ],\n  \"first_id\": \"extstorage_abc123\",\n  \"last_id\": \"extstorage_oci123\",\n  \"has_more\": false\n}\n"
           }
         },
         "security": [
@@ -23782,6 +23782,13 @@
                 "curl": "curl -X POST https://api.openai.com/v1/organization/external_storage \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"project_id\": \"proj_gcp123\",\n    \"provider\": {\n      \"type\": \"gcp\",\n      \"bucket\": \"customer-gcp-retention\",\n      \"workload_identity_project_number\": \"123456789012\",\n      \"workload_identity_pool_id\": \"customer-pool\",\n      \"workload_identity_provider_id\": \"customer-provider\"\n    }\n  }'\n"
               },
               "response": "{\n  \"object\": \"organization.external_storage\",\n  \"id\": \"extstorage_gcp123\",\n  \"project_id\": \"proj_gcp123\",\n  \"provider\": {\n    \"type\": \"gcp\",\n    \"bucket\": \"customer-gcp-retention\",\n    \"workload_identity_project_number\": \"123456789012\",\n    \"workload_identity_pool_id\": \"customer-pool\",\n    \"workload_identity_provider_id\": \"customer-provider\",\n    \"region\": \"us-central1\",\n    \"audience\": \"proj_gcp123\"\n  },\n  \"geography\": \"US\",\n  \"status\": \"pending\",\n  \"created_at\": 1711471400\n}\n"
+            },
+            {
+              "title": "OCI Object Storage",
+              "request": {
+                "curl": "curl -X POST https://api.openai.com/v1/organization/external_storage \\\n  -H \"Authorization: Bearer $OPENAI_ADMIN_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"project_id\": \"proj_oci123\",\n    \"provider\": {\n      \"type\": \"oci\",\n      \"tenancy_ocid\": \"ocid1.tenancy.oc1..example\",\n      \"region\": \"us-ashburn-1\",\n      \"bucket\": \"customer-oci-retention\"\n    }\n  }'\n"
+              },
+              "response": "{\n  \"object\": \"organization.external_storage\",\n  \"id\": \"extstorage_oci123\",\n  \"project_id\": \"proj_oci123\",\n  \"provider\": {\n    \"type\": \"oci\",\n    \"tenancy_ocid\": \"ocid1.tenancy.oc1..example\",\n    \"region\": \"us-ashburn-1\",\n    \"bucket\": \"customer-oci-retention\"\n  },\n  \"geography\": \"US\",\n  \"status\": \"pending\",\n  \"created_at\": 1711471300\n}\n"
             }
           ]
         },
@@ -36290,6 +36297,15 @@
           "gpt-3.5-turbo-16k-0613"
         ],
         "x-openai-enum-deprecations": {
+          "gpt-5": {
+            "message": "Announced shutdown date: 2026-12-11. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+          },
+          "gpt-5-mini": {
+            "message": "Announced shutdown date: 2026-12-11. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+          },
+          "gpt-5-nano": {
+            "message": "Announced shutdown date: 2026-12-11. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+          },
           "gpt-4.1": {
             "message": "Announced shutdown date: 2027-01-14. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
           },
@@ -36493,7 +36509,12 @@
                   "gpt-4o-transcribe",
                   "gpt-4o-transcribe-diarize",
                   "gpt-realtime-whisper"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-4o-mini-transcribe-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-02-26. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ]
           },
@@ -36553,7 +36574,12 @@
                   "gpt-4o-transcribe",
                   "gpt-4o-transcribe-diarize",
                   "gpt-realtime-whisper"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-4o-mini-transcribe-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-02-26. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ]
           },
@@ -44989,7 +45015,12 @@
                   "tts-1-hd",
                   "gpt-4o-mini-tts",
                   "gpt-4o-mini-tts-2025-12-15"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-4o-mini-tts": {
+                    "message": "Announced shutdown date: 2027-01-06. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ],
             "x-oaiTypeLabel": "string"
@@ -45182,7 +45213,18 @@
                   "gpt-3.5-turbo-1106",
                   "gpt-3.5-turbo-0125",
                   "gpt-3.5-turbo-16k-0613"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-5": {
+                    "message": "Announced shutdown date: 2026-12-11. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-5-mini": {
+                    "message": "Announced shutdown date: 2026-12-11. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-5-nano": {
+                    "message": "Announced shutdown date: 2026-12-11. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               },
               {
                 "type": "null"
@@ -45515,6 +45557,11 @@
                   "gpt-4o-mini-transcribe-2025-12-15",
                   "gpt-4o-transcribe-diarize"
                 ],
+                "x-openai-enum-deprecations": {
+                  "gpt-4o-mini-transcribe-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-02-26. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                },
                 "x-stainless-const": true
               }
             ],
@@ -54781,6 +54828,7 @@
             "enum": [
               "gpt-6-astra",
               "gpt-6.1-sol",
+              "gpt-6.1-terra",
               "gpt-6-sol",
               "gpt-6-luna",
               "gpt-5.6-sol",
@@ -54874,6 +54922,12 @@
                 "message": "Announced shutdown date: 2027-04-01. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
               },
               "gpt-5.1": {
+                "message": "Announced shutdown date: 2027-04-01. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+              },
+              "gpt-5.1-2025-11-13": {
+                "message": "Announced shutdown date: 2027-04-01. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+              },
+              "gpt-5.4-nano-2026-03-17": {
                 "message": "Announced shutdown date: 2027-04-01. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
               },
               "gpt-4.1-2025-04-14": {
@@ -64390,7 +64444,18 @@
                   "gpt-audio-mini",
                   "gpt-audio-mini-2025-10-06",
                   "gpt-audio-mini-2025-12-15"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-realtime-2025-08-28": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-realtime-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-audio-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ]
           },
@@ -64816,7 +64881,18 @@
                   "gpt-audio-mini",
                   "gpt-audio-mini-2025-10-06",
                   "gpt-audio-mini-2025-12-15"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-realtime-2025-08-28": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-realtime-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-audio-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ],
             "description": "The Realtime model used for this session.\n"
@@ -65271,7 +65347,18 @@
                   "gpt-audio-mini",
                   "gpt-audio-mini-2025-10-06",
                   "gpt-audio-mini-2025-12-15"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-realtime-2025-08-28": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-realtime-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-audio-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ],
             "description": "The Realtime model used for this session.\n"
@@ -79793,7 +79880,7 @@
           "mode"
         ],
         "title": "Prompt cache breakpoint",
-        "description": "Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
+        "description": "Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
       },
       "ModerationMode": {
         "type": "string",
@@ -80084,6 +80171,14 @@
             "description": "The breakpoint mode. Always `explicit`.",
             "default": "explicit",
             "x-stainless-const": true
+          },
+          "ttl": {
+            "type": "string",
+            "enum": [
+              "30m",
+              "12h"
+            ],
+            "description": "The minimum lifetime of this cache breakpoint. Defaults to the request TTL."
           }
         },
         "type": "object",
@@ -80091,7 +80186,7 @@
           "mode"
         ],
         "title": "Prompt cache breakpoint",
-        "description": "Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
+        "description": "Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
       },
       "InputTextContent": {
         "properties": {
@@ -116078,6 +116173,14 @@
             "description": "The breakpoint mode. Always `explicit`.",
             "default": "explicit",
             "x-stainless-const": true
+          },
+          "ttl": {
+            "type": "string",
+            "enum": [
+              "30m",
+              "12h"
+            ],
+            "description": "The minimum lifetime of this cache breakpoint. Defaults to the request TTL."
           }
         },
         "type": "object",
@@ -116085,7 +116188,7 @@
           "mode"
         ],
         "title": "Prompt cache breakpoint",
-        "description": "Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
+        "description": "Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
       },
       "BetaInputImageContent": {
         "properties": {
@@ -118874,7 +118977,7 @@
           "mode"
         ],
         "title": "Prompt cache breakpoint",
-        "description": "Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
+        "description": "Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
       },
       "BetaDetailEnum": {
         "type": "string",
@@ -120882,6 +120985,7 @@
             "enum": [
               "gpt-6-astra",
               "gpt-6.1-sol",
+              "gpt-6.1-terra",
               "gpt-6-sol",
               "gpt-6-luna",
               "gpt-5.6-sol",
@@ -120975,6 +121079,12 @@
                 "message": "Announced shutdown date: 2027-04-01. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
               },
               "gpt-5.1": {
+                "message": "Announced shutdown date: 2027-04-01. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+              },
+              "gpt-5.1-2025-11-13": {
+                "message": "Announced shutdown date: 2027-04-01. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+              },
+              "gpt-5.4-nano-2026-03-17": {
                 "message": "Announced shutdown date: 2027-04-01. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
               },
               "gpt-4.1-2025-04-14": {
