@@ -1,14 +1,17 @@
 # GitHub REST API API Drift Ground-Truth
-> Last synchronized: 2026-10-27T12:25:25.293717+00:00 UTC
-> Action Directive: `SAFE_TO_UPGRADE` | Drift Score: 0.0/100
+> Last synchronized: 2026-10-27T22:24:28.112453+00:00 UTC
+> Action Directive: `PIN_SDK` | Drift Score: 46.8/100
 
 ## Active SDK State
 - Package: `PyGithub` (pypi)
 - Version: `2.10.0`
-- Release Age: 68.1 days
+- Release Age: 68.5 days
 
 ## Detected Breaking Changes
-- Zero breaking changes detected. Specification is backward-compatible with current SDK.
+- **[ENDPOINT_OR_METHOD_REMOVED]** `GET /agents/automations/available-tools`: Operation 'GET /agents/automations/available-tools' was removed from upstream specification. (Severity: 9.0)
+- **[ENDPOINT_OR_METHOD_REMOVED]** `GET /agents/automations/available-triggers`: Operation 'GET /agents/automations/available-triggers' was removed from upstream specification. (Severity: 9.0)
+- **[ENDPOINT_OR_METHOD_REMOVED]** `GET /agents/automations/{automation_id}`: Operation 'GET /agents/automations/{automation_id}' was removed from upstream specification. (Severity: 9.0)
+- **[ENDPOINT_OR_METHOD_REMOVED]** `GET /agents/automations/{automation_id}/tasks`: Operation 'GET /agents/automations/{automation_id}/tasks' was removed from upstream specification. (Severity: 9.0)
 
 ## Recommended Agent Action
-`SAFE_TO_UPGRADE`
+`PIN_SDK`
