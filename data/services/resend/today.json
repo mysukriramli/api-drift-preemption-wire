@@ -2,7 +2,7 @@
   "metadata": {
     "service_id": "resend",
     "service_name": "Resend Email API",
-    "generated_at_utc": "2026-10-30T06:00:11.053593+00:00",
+    "generated_at_utc": "2026-10-30T13:10:39.193254+00:00",
     "schema_version": "1.0.0"
   },
   "drift_status": {
@@ -15,7 +15,7 @@
     "sdk_ecosystem": "pypi",
     "sdk_package": "resend",
     "sdk_latest_version": "2.50.1",
-    "sdk_release_age_days": 0.6,
+    "sdk_release_age_days": 0.9,
     "drift_score": 0.0,
     "directive": "SAFE_TO_UPGRADE",
     "confidence": 0.9,
