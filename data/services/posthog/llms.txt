@@ -1,11 +1,11 @@
 # PostHog API API Drift Ground-Truth
-> Last synchronized: 2026-10-29T22:51:02.665932+00:00 UTC
+> Last synchronized: 2026-10-30T06:00:11.053593+00:00 UTC
 > Action Directive: `SAFE_TO_UPGRADE` | Drift Score: 0.0/100
 
 ## Active SDK State
 - Package: `posthog` (pypi)
 - Version: `7.80.3`
-- Release Age: 0.4 days
+- Release Age: 0.7 days
 
 ## Detected Breaking Changes
 - Zero breaking changes detected. Specification is backward-compatible with current SDK.
