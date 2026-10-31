@@ -2,7 +2,7 @@
   "metadata": {
     "service_id": "openai",
     "service_name": "OpenAI API",
-    "generated_at_utc": "2026-10-31T05:55:44.021226+00:00",
+    "generated_at_utc": "2026-10-31T12:46:47.049189+00:00",
     "schema_version": "1.0.0"
   },
   "drift_status": {
@@ -15,7 +15,7 @@
     "sdk_ecosystem": "pypi",
     "sdk_package": "openai",
     "sdk_latest_version": "3.42.0",
-    "sdk_release_age_days": 0.2,
+    "sdk_release_age_days": 0.5,
     "drift_score": 0.0,
     "directive": "SAFE_TO_UPGRADE",
     "confidence": 0.9,
