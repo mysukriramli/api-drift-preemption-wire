@@ -55862,6 +55862,7 @@
               "gpt-daybreak-blue-latest",
               "gpt-daybreak-red-latest",
               "gpt-5.6-cyber",
+              "gpt-6-cyber",
               "gpt-rosalind-research",
               "gpt-6-rosalind"
             ],
@@ -93064,7 +93065,7 @@
           "file": {
             "type": "string",
             "format": "binary",
-            "description": "The image or audio file to check for supported OpenAI provenance signals."
+            "description": "The image or audio file to check for supported OpenAI provenance signals. Supported image formats are PNG, JPEG, WebP, and GIF (including animated GIFs)."
           }
         },
         "type": "object",
@@ -124793,6 +124794,7 @@
               "gpt-daybreak-blue-latest",
               "gpt-daybreak-red-latest",
               "gpt-5.6-cyber",
+              "gpt-6-cyber",
               "gpt-rosalind-research",
               "gpt-6-rosalind"
             ],
