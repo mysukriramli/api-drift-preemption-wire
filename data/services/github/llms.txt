@@ -1,11 +1,11 @@
 # GitHub REST API API Drift Ground-Truth
-> Last synchronized: 2026-11-06T06:59:01.998278+00:00 UTC
+> Last synchronized: 2026-11-06T19:31:50.150151+00:00 UTC
 > Action Directive: `SAFE_TO_UPGRADE` | Drift Score: 0.0/100
 
 ## Active SDK State
 - Package: `PyGithub` (pypi)
 - Version: `2.10.0`
-- Release Age: 77.9 days
+- Release Age: 78.4 days
 
 ## Detected Breaking Changes
 - Zero breaking changes detected. Specification is backward-compatible with current SDK.

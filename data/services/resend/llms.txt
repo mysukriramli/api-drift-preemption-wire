@@ -1,11 +1,11 @@
 # Resend Email API API Drift Ground-Truth
-> Last synchronized: 2026-11-06T06:59:01.998278+00:00 UTC
+> Last synchronized: 2026-11-06T19:31:50.150151+00:00 UTC
 > Action Directive: `SAFE_TO_UPGRADE` | Drift Score: 0.0/100
 
 ## Active SDK State
 - Package: `resend` (pypi)
 - Version: `2.52.0`
-- Release Age: 0.5 days
+- Release Age: 1.0 days
 
 ## Detected Breaking Changes
 - Zero breaking changes detected. Specification is backward-compatible with current SDK.
