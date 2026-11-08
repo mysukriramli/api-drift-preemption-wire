@@ -2,7 +2,7 @@
   "metadata": {
     "service_id": "github",
     "service_name": "GitHub REST API",
-    "generated_at_utc": "2026-11-08T06:18:00.207277+00:00",
+    "generated_at_utc": "2026-11-08T13:41:42.944707+00:00",
     "schema_version": "1.0.0"
   },
   "drift_status": {
@@ -15,7 +15,7 @@
     "sdk_ecosystem": "pypi",
     "sdk_package": "PyGithub",
     "sdk_latest_version": "2.10.0",
-    "sdk_release_age_days": 79.8,
+    "sdk_release_age_days": 80.2,
     "drift_score": 0.0,
     "directive": "SAFE_TO_UPGRADE",
     "confidence": 0.9,
