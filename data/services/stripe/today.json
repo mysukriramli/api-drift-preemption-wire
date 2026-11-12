@@ -2,7 +2,7 @@
   "metadata": {
     "service_id": "stripe",
     "service_name": "Stripe API",
-    "generated_at_utc": "2026-11-11T19:43:29.108691+00:00",
+    "generated_at_utc": "2026-11-12T07:24:13.715851+00:00",
     "schema_version": "1.0.0"
   },
   "drift_status": {
@@ -14,8 +14,8 @@
     "breaking_changes": [],
     "sdk_ecosystem": "pypi",
     "sdk_package": "stripe",
-    "sdk_latest_version": "16.1.0",
-    "sdk_release_age_days": 13.0,
+    "sdk_latest_version": "17.0.0",
+    "sdk_release_age_days": 0.5,
     "drift_score": 0.0,
     "directive": "SAFE_TO_UPGRADE",
     "confidence": 0.9,
