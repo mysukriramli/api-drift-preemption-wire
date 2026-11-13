@@ -2,20 +2,20 @@
   "metadata": {
     "service_id": "openai",
     "service_name": "OpenAI API",
-    "generated_at_utc": "2026-11-13T06:56:12.025015+00:00",
+    "generated_at_utc": "2026-11-13T19:52:08.881098+00:00",
     "schema_version": "1.0.0"
   },
   "drift_status": {
     "service_id": "openai",
     "service_name": "OpenAI API",
     "spec_url": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
-    "spec_hash_sha256": "069d509948ba327032c94490abf3d6c029b2ee7fbfaf81652af725ec53e64619",
+    "spec_hash_sha256": "ad2ede62efc367ed18bbf0bafe4dbcf59cd228a11380193124f52c482c94a72e",
     "total_endpoints": 388,
     "breaking_changes": [],
     "sdk_ecosystem": "pypi",
     "sdk_package": "openai",
     "sdk_latest_version": "3.50.0",
-    "sdk_release_age_days": 0.5,
+    "sdk_release_age_days": 1.0,
     "drift_score": 0.0,
     "directive": "SAFE_TO_UPGRADE",
     "confidence": 0.9,
