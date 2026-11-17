@@ -32820,7 +32820,7 @@
               "minLength": 1,
               "maxLength": 256
             },
-            "description": "An optional client-generated key that makes retries of submitted messages idempotent."
+            "description": "An optional client-generated key for message submissions. Retry the same message with the same key and identical input within the 24-hour replay window; a retry replays the original outcome if it is available. After the window expires, a key whose outcome is unavailable may return 409. After a timeout or server error, inspect the session history and items before resubmitting. Use a new key for a new message, or only after confirming the earlier message did not execute."
           }
         ],
         "requestBody": {
@@ -45642,6 +45642,10 @@
                   }
                 ]
               },
+              "background_options": {
+                "$ref": "#/components/schemas/BackgroundOptionsParam",
+                "description": "Options for background execution on HTTP requests. The `2h` and `8h`\ncompletion windows require `background: true`, Standard processing,\nand `stream: false` or omitted.\n"
+              },
               "stream": {
                 "anyOf": [
                   {
@@ -55593,7 +55597,8 @@
               "gpt-5.6-cyber",
               "gpt-6-cyber",
               "gpt-rosalind-research",
-              "gpt-6-rosalind"
+              "gpt-6-rosalind",
+              "gpt-6.2-astra-law"
             ],
             "x-openai-enum-deprecations": {
               "o1-pro": {
@@ -55652,7 +55657,9 @@
             "type": "string",
             "enum": [
               "gpt-6-astra",
+              "gpt-6.2-astra",
               "gpt-6.1-sol",
+              "gpt-6.2-sol",
               "gpt-6.1-terra",
               "gpt-6-sol",
               "gpt-6-luna",
@@ -65860,7 +65867,7 @@
                       ]
                     },
                     "default": null,
-                    "description": "Configuration for input audio noise reduction. This can be set to `null` to turn off.\nNoise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.\nFiltering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.\n",
+                    "description": "When you supply a `noise_reduction` object, you must set `type` to `near_field` or `far_field`.\nSet `noise_reduction` to `null` to turn off input audio noise reduction.\nNoise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.\nFiltering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.\n",
                     "properties": {
                       "type": {
                         "$ref": "#/components/schemas/NoiseReductionType"
@@ -89013,6 +89020,29 @@
           }
         ]
       },
+      "BackgroundCompletionWindowEnum": {
+        "type": "string",
+        "enum": [
+          "soonest",
+          "2h",
+          "8h"
+        ]
+      },
+      "BackgroundOptionsParam": {
+        "properties": {
+          "completion_window": {
+            "$ref": "#/components/schemas/BackgroundCompletionWindowEnum",
+            "description": "The completion window for background execution. Defaults to `soonest`; `2h` and `8h` select discounted background execution."
+          },
+          "continuation_id": {
+            "type": "string",
+            "description": "A customer-provided opaque identifier used to prioritize related background requests. It does not add prior history to the input."
+          }
+        },
+        "type": "object",
+        "required": [],
+        "description": "Options for background execution."
+      },
       "ConversationParam-2": {
         "properties": {
           "id": {
@@ -103652,6 +103682,7 @@
           "max_output_tokens",
           "session_budget_exceeded",
           "usage_limit_exceeded",
+          "api_key_spend_limit_exceeded",
           "project_spend_limit_exceeded",
           "organization_spend_limit_exceeded",
           "organization_usage_limit_exceeded",
@@ -103678,6 +103709,7 @@
           "The model reached its output token limit before finishing the response.",
           "The session has reached its usage budget.",
           "The organization has reached a usage, plan, or billing limit.",
+          "The API key has reached its enforced spend limit.",
           "The project has reached its enforced spend limit.",
           "The organization has reached its enforced spend limit.",
           "The organization has reached its OpenAI-assigned usage limit.",
@@ -105748,19 +105780,50 @@
         ],
         "description": "The configured action review mode."
       },
+      "SessionBudgetControlResource": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "minimum": 1,
+            "maximum": 4503599627370495,
+            "description": "The configured positive limit in USD cents, or null when unlimited."
+          },
+          "consumed": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "Best-effort recorded spend floored to whole USD cents, or null when unavailable."
+          }
+        },
+        "required": [
+          "limit",
+          "consumed"
+        ],
+        "additionalProperties": false,
+        "description": "Session-wide spending limit and best-effort consumption, including unlimited sessions."
+      },
       "SessionStatusResource": {
         "type": "string",
         "enum": [
           "idle",
           "in_progress",
           "requires_action",
-          "failed"
+          "failed",
+          "budget_reached"
         ],
         "x-enumDescriptions": [
           "The session has no turn in progress and is ready for input. A hosted environment may still be provisioning.",
           "The session is processing a turn.",
           "The session is waiting for one or more required actions.",
-          "The session failed."
+          "The session failed.",
+          "The session is paused because its spending limit was reached."
         ],
         "description": "The current status of a session."
       },
@@ -106390,6 +106453,10 @@
             "$ref": "#/components/schemas/SessionReviewResource",
             "description": "Review applied to eligible actions in this session. Omitted when review is none and automatic review is not enabled. Omission means none."
           },
+          "spend_control": {
+            "$ref": "#/components/schemas/SessionBudgetControlResource",
+            "description": "Spending limit and best-effort consumption, in USD cents. Present when spending-control visibility is enabled; limit is null without a cap. Older server responses may omit this object."
+          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -106559,6 +106626,26 @@
         ],
         "description": "Review applied to eligible actions in a session."
       },
+      "SessionBudgetControlParams": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "minimum": 1,
+            "maximum": 4503599627370495,
+            "description": "Positive USD cents, or null to remove the limit."
+          }
+        },
+        "required": [
+          "limit"
+        ],
+        "additionalProperties": false,
+        "description": "Sets the session-wide limit without changing recorded spend."
+      },
       "CreateSessionInputParam": {
         "oneOf": [
           {
@@ -106618,6 +106705,17 @@
           "review": {
             "$ref": "#/components/schemas/SessionReviewParam",
             "description": "Action review mode. Omit to use none."
+          },
+          "spend_control": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SessionBudgetControlParams"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Optional spending limit in USD cents. Omission or null creates an unlimited session."
           },
           "metadata": {
             "type": [
@@ -107786,6 +107884,41 @@
         "additionalProperties": false,
         "description": "Emitted when a session becomes idle."
       },
+      "SessionEventAgentSessionBudgetReached": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "agent.session.budget_reached"
+            ],
+            "default": "agent.session.budget_reached",
+            "x-stainless-const": true,
+            "description": "The type of the object. Always `agent.session.budget_reached`."
+          },
+          "event_id": {
+            "type": "string",
+            "minLength": 0,
+            "description": "The unique ID of the event."
+          },
+          "session": {
+            "$ref": "#/components/schemas/SessionResource",
+            "description": "The paused session."
+          },
+          "obfuscation": {
+            "type": "string",
+            "minLength": 0,
+            "description": "Random alphanumeric padding. Present when stream obfuscation is enabled."
+          }
+        },
+        "required": [
+          "type",
+          "event_id",
+          "session"
+        ],
+        "additionalProperties": false,
+        "description": "Emitted when a session pauses because its spending limit was reached."
+      },
       "SessionEventAgentSessionInProgress": {
         "type": "object",
         "properties": {
@@ -108811,6 +108944,9 @@
             "$ref": "#/components/schemas/SessionEventAgentSessionIdle"
           },
           {
+            "$ref": "#/components/schemas/SessionEventAgentSessionBudgetReached"
+          },
+          {
             "$ref": "#/components/schemas/SessionEventAgentSessionInProgress"
           },
           {
@@ -108888,6 +109024,7 @@
             "agent.session.turn.cancelled": "#/components/schemas/SessionEventAgentSessionTurnCancelled",
             "agent.session.turn.item.added": "#/components/schemas/SessionEventAgentSessionTurnItemAdded",
             "agent.session.idle": "#/components/schemas/SessionEventAgentSessionIdle",
+            "agent.session.budget_reached": "#/components/schemas/SessionEventAgentSessionBudgetReached",
             "agent.session.in_progress": "#/components/schemas/SessionEventAgentSessionInProgress",
             "agent.session.requires_action": "#/components/schemas/SessionEventAgentSessionRequiresAction",
             "agent.session.failed": "#/components/schemas/SessionEventAgentSessionFailed",
@@ -108921,6 +109058,7 @@
           "agent.session.turn.cancelled",
           "agent.session.turn.item.added",
           "agent.session.idle",
+          "agent.session.budget_reached",
           "agent.session.in_progress",
           "agent.session.requires_action",
           "agent.session.failed",
@@ -109018,6 +109156,17 @@
           "review": {
             "$ref": "#/components/schemas/SessionReviewParam",
             "description": "Default action review for new root turns. Existing turns and their subagents keep their review mode."
+          },
+          "spend_control": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SessionBudgetControlParams"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Omit to retain the limit; null or a null limit removes it without resetting spend."
           },
           "agent": {
             "$ref": "#/components/schemas/UpdateSessionAgentParam",
@@ -124217,7 +124366,8 @@
               "gpt-5.6-cyber",
               "gpt-6-cyber",
               "gpt-rosalind-research",
-              "gpt-6-rosalind"
+              "gpt-6-rosalind",
+              "gpt-6.2-astra-law"
             ],
             "x-openai-enum-deprecations": {
               "o1-pro": {
@@ -124276,7 +124426,9 @@
             "type": "string",
             "enum": [
               "gpt-6-astra",
+              "gpt-6.2-astra",
               "gpt-6.1-sol",
+              "gpt-6.2-sol",
               "gpt-6.1-terra",
               "gpt-6-sol",
               "gpt-6-luna",
@@ -133332,6 +133484,10 @@
                   }
                 ]
               },
+              "background_options": {
+                "$ref": "#/components/schemas/BetaBackgroundOptionsParam",
+                "description": "Options for background execution on HTTP requests. The `2h` and `8h`\ncompletion windows require `background: true`, Standard processing,\nand `stream: false` or omitted.\n"
+              },
               "stream": {
                 "anyOf": [
                   {
@@ -133463,6 +133619,29 @@
           {
             "type": "null"
           }
+        ]
+      },
+      "BetaBackgroundOptionsParam": {
+        "properties": {
+          "completion_window": {
+            "$ref": "#/components/schemas/BetaBackgroundCompletionWindowEnum",
+            "description": "The completion window for background execution. Defaults to `soonest`; `2h` and `8h` select discounted background execution."
+          },
+          "continuation_id": {
+            "type": "string",
+            "description": "A customer-provided opaque identifier used to prioritize related background requests. It does not add prior history to the input."
+          }
+        },
+        "type": "object",
+        "required": [],
+        "description": "Options for background execution."
+      },
+      "BetaBackgroundCompletionWindowEnum": {
+        "type": "string",
+        "enum": [
+          "soonest",
+          "2h",
+          "8h"
         ]
       },
       "BetaModerationParam": {
