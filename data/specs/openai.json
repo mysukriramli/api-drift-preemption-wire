@@ -7061,7 +7061,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateModerationResponse"
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/CreateModerationResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CreateCSAMModerationResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -42309,7 +42316,12 @@
               "/v1/images/edits",
               "/v1/videos"
             ],
-            "description": "The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, `/v1/images/edits`, and `/v1/videos` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch."
+            "x-openai-enum-deprecations": {
+              "/v1/videos": {
+                "message": "The Videos API shut down on September 24, 2026. Batch creation no longer accepts this endpoint."
+              }
+            },
+            "description": "The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, and `/v1/images/edits` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch."
           },
           "completion_window": {
             "type": "string",
@@ -45159,7 +45171,7 @@
             ]
           },
           "model": {
-            "description": "The content moderation model you would like to use. Learn more in\n[the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about\navailable models [here](https://developers.openai.com/api/docs/guides/moderation).\n",
+            "description": "The content moderation model you would like to use. Learn more in\n[the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about\navailable models [here](https://developers.openai.com/api/docs/guides/moderation).\nApproved organizations can use `omni-moderation-csam-latest` with a single `image_url` input.\n",
             "default": "omni-moderation-latest",
             "example": "omni-moderation-2024-09-26",
             "anyOf": [
@@ -88661,6 +88673,133 @@
         "description": "URI that should appear in the SIP Refer-To header. Supports values like\n`tel:+14155550123` or `sip:agent@example.com`.",
         "example": "tel:+14155550123"
       },
+      "CSAMCategoryFlags": {
+        "additionalProperties": false,
+        "properties": {
+          "likely-csam": {
+            "title": "Likely-Csam",
+            "type": "boolean"
+          },
+          "likely-csam/gen-ai": {
+            "title": "Likely-Csam/Gen-Ai",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "likely-csam",
+          "likely-csam/gen-ai"
+        ],
+        "title": "CSAMCategoryFlags",
+        "type": "object"
+      },
+      "CSAMCategoryScores": {
+        "additionalProperties": false,
+        "properties": {
+          "likely-csam": {
+            "title": "Likely-Csam",
+            "type": "number"
+          },
+          "likely-csam/gen-ai": {
+            "title": "Likely-Csam/Gen-Ai",
+            "type": "number"
+          }
+        },
+        "required": [
+          "likely-csam",
+          "likely-csam/gen-ai"
+        ],
+        "title": "CSAMCategoryScores",
+        "type": "object"
+      },
+      "CSAMCategoryAppliedInputTypes": {
+        "additionalProperties": false,
+        "properties": {
+          "likely-csam": {
+            "items": {
+              "const": "image",
+              "type": "string"
+            },
+            "maxItems": 1,
+            "minItems": 1,
+            "title": "Likely-Csam",
+            "type": "array"
+          },
+          "likely-csam/gen-ai": {
+            "items": {
+              "const": "image",
+              "type": "string"
+            },
+            "maxItems": 1,
+            "minItems": 1,
+            "title": "Likely-Csam/Gen-Ai",
+            "type": "array"
+          }
+        },
+        "required": [
+          "likely-csam",
+          "likely-csam/gen-ai"
+        ],
+        "title": "CSAMCategoryAppliedInputTypes",
+        "type": "object"
+      },
+      "CSAMModerationResult": {
+        "properties": {
+          "flagged": {
+            "description": "Whether either CSAM category was flagged.",
+            "title": "Flagged",
+            "type": "boolean"
+          },
+          "categories": {
+            "$ref": "#/components/schemas/CSAMCategoryFlags",
+            "description": "Whether the image was flagged in each category."
+          },
+          "category_scores": {
+            "$ref": "#/components/schemas/CSAMCategoryScores",
+            "description": "The classifier score for each category."
+          },
+          "category_applied_input_types": {
+            "$ref": "#/components/schemas/CSAMCategoryAppliedInputTypes",
+            "description": "The input types evaluated for each category."
+          }
+        },
+        "required": [
+          "flagged",
+          "categories",
+          "category_scores",
+          "category_applied_input_types"
+        ],
+        "title": "CSAMModerationResult",
+        "type": "object"
+      },
+      "CreateCSAMModerationResponse": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "model": {
+            "const": "omni-moderation-csam-latest",
+            "title": "Model",
+            "type": "string"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/CSAMModerationResult"
+            },
+            "maxItems": 1,
+            "minItems": 1,
+            "title": "Results",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "model",
+          "results"
+        ],
+        "title": "CreateCSAMModerationResponse",
+        "type": "object"
+      },
       "AwsExternalStorageProviderResponse": {
         "properties": {
           "type": {
@@ -103680,7 +103819,6 @@
         "enum": [
           "context_length_exceeded",
           "max_output_tokens",
-          "session_budget_exceeded",
           "usage_limit_exceeded",
           "api_key_spend_limit_exceeded",
           "project_spend_limit_exceeded",
@@ -103707,7 +103845,6 @@
         "x-enumDescriptions": [
           "The request exceeds the model's context window.",
           "The model reached its output token limit before finishing the response.",
-          "The session has reached its usage budget.",
           "The organization has reached a usage, plan, or billing limit.",
           "The API key has reached its enforced spend limit.",
           "The project has reached its enforced spend limit.",
@@ -105780,50 +105917,19 @@
         ],
         "description": "The configured action review mode."
       },
-      "SessionBudgetControlResource": {
-        "type": "object",
-        "properties": {
-          "limit": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "format": "int64",
-            "minimum": 1,
-            "maximum": 4503599627370495,
-            "description": "The configured positive limit in USD cents, or null when unlimited."
-          },
-          "consumed": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "minimum": 0,
-            "description": "Best-effort recorded spend floored to whole USD cents, or null when unavailable."
-          }
-        },
-        "required": [
-          "limit",
-          "consumed"
-        ],
-        "additionalProperties": false,
-        "description": "Session-wide spending limit and best-effort consumption, including unlimited sessions."
-      },
       "SessionStatusResource": {
         "type": "string",
         "enum": [
           "idle",
           "in_progress",
           "requires_action",
-          "failed",
-          "budget_reached"
+          "failed"
         ],
         "x-enumDescriptions": [
           "The session has no turn in progress and is ready for input. A hosted environment may still be provisioning.",
           "The session is processing a turn.",
           "The session is waiting for one or more required actions.",
-          "The session failed.",
-          "The session is paused because its spending limit was reached."
+          "The session failed."
         ],
         "description": "The current status of a session."
       },
@@ -106453,10 +106559,6 @@
             "$ref": "#/components/schemas/SessionReviewResource",
             "description": "Review applied to eligible actions in this session. Omitted when review is none and automatic review is not enabled. Omission means none."
           },
-          "spend_control": {
-            "$ref": "#/components/schemas/SessionBudgetControlResource",
-            "description": "Spending limit and best-effort consumption, in USD cents. Present when spending-control visibility is enabled; limit is null without a cap. Older server responses may omit this object."
-          },
           "metadata": {
             "type": "object",
             "additionalProperties": {
@@ -106626,26 +106728,6 @@
         ],
         "description": "Review applied to eligible actions in a session."
       },
-      "SessionBudgetControlParams": {
-        "type": "object",
-        "properties": {
-          "limit": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "format": "int64",
-            "minimum": 1,
-            "maximum": 4503599627370495,
-            "description": "Positive USD cents, or null to remove the limit."
-          }
-        },
-        "required": [
-          "limit"
-        ],
-        "additionalProperties": false,
-        "description": "Sets the session-wide limit without changing recorded spend."
-      },
       "CreateSessionInputParam": {
         "oneOf": [
           {
@@ -106705,17 +106787,6 @@
           "review": {
             "$ref": "#/components/schemas/SessionReviewParam",
             "description": "Action review mode. Omit to use none."
-          },
-          "spend_control": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/SessionBudgetControlParams"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "Optional spending limit in USD cents. Omission or null creates an unlimited session."
           },
           "metadata": {
             "type": [
@@ -107884,41 +107955,6 @@
         "additionalProperties": false,
         "description": "Emitted when a session becomes idle."
       },
-      "SessionEventAgentSessionBudgetReached": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [
-              "agent.session.budget_reached"
-            ],
-            "default": "agent.session.budget_reached",
-            "x-stainless-const": true,
-            "description": "The type of the object. Always `agent.session.budget_reached`."
-          },
-          "event_id": {
-            "type": "string",
-            "minLength": 0,
-            "description": "The unique ID of the event."
-          },
-          "session": {
-            "$ref": "#/components/schemas/SessionResource",
-            "description": "The paused session."
-          },
-          "obfuscation": {
-            "type": "string",
-            "minLength": 0,
-            "description": "Random alphanumeric padding. Present when stream obfuscation is enabled."
-          }
-        },
-        "required": [
-          "type",
-          "event_id",
-          "session"
-        ],
-        "additionalProperties": false,
-        "description": "Emitted when a session pauses because its spending limit was reached."
-      },
       "SessionEventAgentSessionInProgress": {
         "type": "object",
         "properties": {
@@ -108944,9 +108980,6 @@
             "$ref": "#/components/schemas/SessionEventAgentSessionIdle"
           },
           {
-            "$ref": "#/components/schemas/SessionEventAgentSessionBudgetReached"
-          },
-          {
             "$ref": "#/components/schemas/SessionEventAgentSessionInProgress"
           },
           {
@@ -109024,7 +109057,6 @@
             "agent.session.turn.cancelled": "#/components/schemas/SessionEventAgentSessionTurnCancelled",
             "agent.session.turn.item.added": "#/components/schemas/SessionEventAgentSessionTurnItemAdded",
             "agent.session.idle": "#/components/schemas/SessionEventAgentSessionIdle",
-            "agent.session.budget_reached": "#/components/schemas/SessionEventAgentSessionBudgetReached",
             "agent.session.in_progress": "#/components/schemas/SessionEventAgentSessionInProgress",
             "agent.session.requires_action": "#/components/schemas/SessionEventAgentSessionRequiresAction",
             "agent.session.failed": "#/components/schemas/SessionEventAgentSessionFailed",
@@ -109058,7 +109090,6 @@
           "agent.session.turn.cancelled",
           "agent.session.turn.item.added",
           "agent.session.idle",
-          "agent.session.budget_reached",
           "agent.session.in_progress",
           "agent.session.requires_action",
           "agent.session.failed",
@@ -109156,17 +109187,6 @@
           "review": {
             "$ref": "#/components/schemas/SessionReviewParam",
             "description": "Default action review for new root turns. Existing turns and their subagents keep their review mode."
-          },
-          "spend_control": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/SessionBudgetControlParams"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "Omit to retain the limit; null or a null limit removes it without resetting spend."
           },
           "agent": {
             "$ref": "#/components/schemas/UpdateSessionAgentParam",
