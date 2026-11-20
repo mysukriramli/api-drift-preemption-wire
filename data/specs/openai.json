@@ -7417,11 +7417,8 @@
                     },
                     "object": {
                       "type": "string",
-                      "enum": [
-                        "organization.admin_api_key.deleted"
-                      ],
-                      "example": "organization.admin_api_key.deleted",
-                      "x-stainless-const": true
+                      "const": "organization.admin_api_key.deleted",
+                      "example": "organization.admin_api_key.deleted"
                     },
                     "deleted": {
                       "type": "boolean",
@@ -36673,11 +36670,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.admin_api_key"
-            ],
-            "description": "The object type, which is always `organization.admin_api_key`",
-            "x-stainless-const": true
+            "const": "organization.admin_api_key",
+            "description": "The object type, which is always `organization.admin_api_key`"
           },
           "id": {
             "type": "string",
@@ -36809,11 +36803,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "example": "list",
-            "x-stainless-const": true
+            "const": "list",
+            "example": "list"
           },
           "data": {
             "type": "array",
@@ -43103,7 +43094,7 @@
             "maximum": 128,
             "default": 1,
             "example": 1,
-            "description": "How many completions to generate for each prompt. Omit `n` to generate one completion per prompt. Newer models reject an explicit `n`, even `n=1`.\n\n**Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.\n"
+            "description": "How many completions to generate for each prompt. Omit `n` to generate one completion per prompt.\n\n**Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.\n"
           },
           "presence_penalty": {
             "type": [
@@ -53629,6 +53620,12 @@
           },
           "client": {
             "$ref": "#/components/schemas/LiveClientConfigParam"
+          },
+          "wake_policy": {
+            "$ref": "#/components/schemas/LiveSpeechWakePolicyParam"
+          },
+          "idle_timeout_s": {
+            "$ref": "#/components/schemas/idle_timeout_s"
           }
         },
         "required": [
@@ -53918,6 +53915,12 @@
           },
           {
             "$ref": "#/components/schemas/LiveSessionUpdated"
+          },
+          {
+            "$ref": "#/components/schemas/LiveSessionResumed"
+          },
+          {
+            "$ref": "#/components/schemas/LiveSessionPaused"
           },
           {
             "$ref": "#/components/schemas/LiveInputAudioMuted"
@@ -57086,11 +57089,8 @@
           },
           "object": {
             "type": "string",
-            "enum": [
-              "organization.project"
-            ],
-            "description": "The object type, which is always `organization.project`",
-            "x-stainless-const": true
+            "const": "organization.project",
+            "description": "The object type, which is always `organization.project`"
           },
           "name": {
             "anyOf": [
@@ -57685,10 +57685,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "x-stainless-const": true
+            "const": "list"
           },
           "data": {
             "type": "array",
@@ -57820,11 +57817,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "project.rate_limit"
-            ],
-            "description": "The object type, which is always `project.rate_limit`",
-            "x-stainless-const": true
+            "const": "project.rate_limit",
+            "description": "The object type, which is always `project.rate_limit`"
           },
           "id": {
             "type": "string",
@@ -57876,10 +57870,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "x-stainless-const": true
+            "const": "list"
           },
           "data": {
             "type": "array",
@@ -57952,11 +57943,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.project.service_account"
-            ],
-            "description": "The object type, which is always `organization.project.service_account`",
-            "x-stainless-const": true
+            "const": "organization.project.service_account",
+            "description": "The object type, which is always `organization.project.service_account`"
           },
           "id": {
             "type": "string",
@@ -57998,11 +57986,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.project.service_account.api_key"
-            ],
-            "description": "The object type, which is always `organization.project.service_account.api_key`",
-            "x-stainless-const": true
+            "const": "organization.project.service_account.api_key",
+            "description": "The object type, which is always `organization.project.service_account.api_key`"
           },
           "value": {
             "type": "string"
@@ -58079,10 +58064,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.project.service_account"
-            ],
-            "x-stainless-const": true
+            "const": "organization.project.service_account"
           },
           "id": {
             "type": "string"
@@ -58127,10 +58109,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.project.service_account.deleted"
-            ],
-            "x-stainless-const": true
+            "const": "organization.project.service_account.deleted"
           },
           "id": {
             "type": "string"
@@ -58150,10 +58129,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "x-stainless-const": true
+            "const": "list"
           },
           "data": {
             "type": "array",
@@ -58368,11 +58344,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.project.user"
-            ],
-            "description": "The object type, which is always `organization.project.user`",
-            "x-stainless-const": true
+            "const": "organization.project.user",
+            "description": "The object type, which is always `organization.project.user`"
           },
           "id": {
             "type": "string",
@@ -58460,10 +58433,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.project.user.deleted"
-            ],
-            "x-stainless-const": true
+            "const": "organization.project.user.deleted"
           },
           "id": {
             "type": "string"
@@ -74729,10 +74699,7 @@
           "type": {
             "type": "string",
             "description": "The type of the event. Always `speech.audio.delta`.\n",
-            "enum": [
-              "speech.audio.delta"
-            ],
-            "x-stainless-const": true
+            "const": "speech.audio.delta"
           },
           "audio": {
             "type": "string",
@@ -74756,10 +74723,7 @@
           "type": {
             "type": "string",
             "description": "The type of the event. Always `speech.audio.done`.\n",
-            "enum": [
-              "speech.audio.done"
-            ],
-            "x-stainless-const": true
+            "const": "speech.audio.done"
           },
           "usage": {
             "type": "object",
@@ -88441,6 +88405,34 @@
         "required": [
           "data_channel"
         ]
+      },
+      "LiveSpeechWakePolicyParam": {
+        "description": "Starts inference when microphone speech is detected.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "description": "The wake policy type, always `speech`.",
+            "default": "speech",
+            "x-stainless-const": true,
+            "type": "string",
+            "enum": [
+              "speech"
+            ]
+          },
+          "vad_threshold": {
+            "description": "The speech detection threshold for the first wake and each later wake, from 0 to 1 inclusive. Defaults to 0.5. Higher values require stronger evidence of speech. This setting is independent of active turn detection.",
+            "type": "number"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "idle_timeout_s": {
+        "description": "Whole seconds of inactivity after which a Live WebRTC session with a speech wake policy pauses inference. The connection and conversation history are retained. Omit to keep inference active after the first wake until the session ends.",
+        "type": "integer",
+        "minimum": 5,
+        "maximum": 60
       },
       "session": {
         "type": "object",
@@ -114100,6 +114092,78 @@
           }
         }
       },
+      "LiveSessionResumed": {
+        "description": "Sent when speech wakes inference and it is ready for audio in a Live WebRTC session. This occurs on the first wake and after each later wake. Delivered to the sideband and, when permitted by its event settings, the data channel.",
+        "example": {
+          "type": "session.resumed",
+          "event_id": "evt_resumed_001"
+        },
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "description": "The unique ID of the Live server event.",
+            "type": "string"
+          },
+          "client_event_id": {
+            "description": "The event_id of the client command associated with this server event, when supplied.",
+            "type": "string"
+          },
+          "type": {
+            "default": "session.resumed",
+            "x-stainless-const": true,
+            "type": "string",
+            "enum": [
+              "session.resumed"
+            ]
+          }
+        },
+        "required": [
+          "event_id",
+          "type"
+        ],
+        "x-oaiMeta": {
+          "example": {
+            "type": "session.resumed",
+            "event_id": "evt_resumed_001"
+          }
+        }
+      },
+      "LiveSessionPaused": {
+        "description": "Sent when the idle timeout pauses inference in a Live WebRTC session. The WebRTC connection, sideband, and session ID persist. Delivered to the sideband and, when permitted by its event settings, the data channel.",
+        "example": {
+          "type": "session.paused",
+          "event_id": "evt_paused_001"
+        },
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "description": "The unique ID of the Live server event.",
+            "type": "string"
+          },
+          "client_event_id": {
+            "description": "The event_id of the client command associated with this server event, when supplied.",
+            "type": "string"
+          },
+          "type": {
+            "default": "session.paused",
+            "x-stainless-const": true,
+            "type": "string",
+            "enum": [
+              "session.paused"
+            ]
+          }
+        },
+        "required": [
+          "event_id",
+          "type"
+        ],
+        "x-oaiMeta": {
+          "example": {
+            "type": "session.paused",
+            "event_id": "evt_paused_001"
+          }
+        }
+      },
       "LiveInputAudioMuted": {
         "description": "Acknowledges a session.input_audio.mute command. An independent input mute sends silence to the model and preserves sideband audio reflection. Fixture playback does not emit this event.",
         "example": {
@@ -115599,11 +115663,19 @@
         }
       },
       "LiveSessionUsage": {
-        "description": "Cumulative audio duration for a Live session. Values are totals for the session, not increments to sum across usage events.",
+        "description": "Cumulative billable duration for a Live session. Eligible WebRTC sessions also report the active and paused breakdown. Do not sum values across usage events.",
         "type": "object",
         "properties": {
           "seconds": {
-            "description": "The cumulative Live audio duration in whole seconds. Do not sum this value across usage events.",
+            "description": "The cumulative billable duration in whole seconds. When present, the active and paused breakdown adds up to this total.",
+            "type": "integer"
+          },
+          "active_seconds": {
+            "description": "The remaining billable seconds attributed to active audio and any unused prepaid duration.",
+            "type": "integer"
+          },
+          "paused_seconds": {
+            "description": "Billable time attributed to paused inference at the configured rate, rounded down to whole seconds.",
             "type": "integer"
           }
         },
@@ -116216,6 +116288,12 @@
           },
           {
             "$ref": "#/components/schemas/LiveSessionUpdated"
+          },
+          {
+            "$ref": "#/components/schemas/LiveSessionResumed"
+          },
+          {
+            "$ref": "#/components/schemas/LiveSessionPaused"
           },
           {
             "$ref": "#/components/schemas/LiveInputAudioMuted"
