@@ -88324,7 +88324,7 @@
         ]
       },
       "idle_timeout_s": {
-        "description": "Whole seconds of inactivity after which a Live WebRTC session with a speech wake policy pauses inference. The connection and conversation history are retained. Omit to keep inference active after the first wake until the session ends.",
+        "description": "Whole seconds of inactivity after which a Live WebRTC or SIP session with a speech wake policy pauses inference. The connection and conversation history are retained. Omit to keep inference active after the first wake until the session ends.",
         "type": "integer",
         "minimum": 5,
         "maximum": 60
@@ -93426,6 +93426,18 @@
               }
             ]
           },
+          "safety_identifier": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "description": "A stable identifier used for safety monitoring and abuse detection."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "image": {
             "$ref": "#/components/schemas/ImageOptionsParam",
             "description": "Request level image options."
@@ -93593,6 +93605,17 @@
             "default": "response.compaction",
             "x-stainless-const": true
           },
+          "safety_identifier": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "A stable identifier that was used for safety monitoring and abuse detection."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "output": {
             "items": {
               "$ref": "#/components/schemas/ItemField"
@@ -93604,6 +93627,10 @@
             "type": "integer",
             "format": "unixtime",
             "description": "Unix timestamp (in seconds) when the compacted conversation was created."
+          },
+          "service_tier": {
+            "type": "string",
+            "description": "The service tier used for compaction, when reported."
           },
           "usage": {
             "$ref": "#/components/schemas/ResponseUsage",
@@ -93622,6 +93649,7 @@
         "example": {
           "id": "resp_001",
           "object": "response.compaction",
+          "safety_identifier": "compact-review-example-001",
           "image": {
             "context_compression": "disabled"
           },
@@ -124430,6 +124458,18 @@
               }
             ]
           },
+          "safety_identifier": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "description": "A stable identifier used for safety monitoring and abuse detection."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "image": {
             "$ref": "#/components/schemas/BetaImageOptionsParam",
             "description": "Request level image options."
@@ -126818,6 +126858,17 @@
             "default": "response.compaction",
             "x-stainless-const": true
           },
+          "safety_identifier": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "A stable identifier that was used for safety monitoring and abuse detection."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "output": {
             "items": {
               "$ref": "#/components/schemas/BetaItemField"
@@ -126829,6 +126880,10 @@
             "type": "integer",
             "format": "unixtime",
             "description": "Unix timestamp (in seconds) when the compacted conversation was created."
+          },
+          "service_tier": {
+            "type": "string",
+            "description": "The service tier used for compaction, when reported."
           },
           "usage": {
             "$ref": "#/components/schemas/BetaResponseUsage",
@@ -126847,6 +126902,7 @@
         "example": {
           "id": "resp_001",
           "object": "response.compaction",
+          "safety_identifier": "compact-review-example-001",
           "image": {
             "context_compression": "disabled"
           },
