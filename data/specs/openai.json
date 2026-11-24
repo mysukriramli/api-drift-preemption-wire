@@ -27816,6 +27816,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -28002,6 +28012,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -28108,6 +28128,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -28228,6 +28258,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -28322,6 +28362,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -28434,6 +28484,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -28538,6 +28598,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -28634,6 +28704,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -28827,6 +28907,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -28943,6 +29033,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -29081,6 +29181,16 @@
           },
           "409": {
             "description": "The request conflicted with the current environment state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded a rate or capacity limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -29317,6 +29427,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -29471,6 +29591,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -29584,7 +29714,7 @@
             }
           },
           "429": {
-            "description": "The Files API rate limit for your user has been exceeded.",
+            "description": "The Files API rate limit for your user has been exceeded. This status also applies to the endpoint rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -29781,6 +29911,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -29889,6 +30029,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -30039,6 +30189,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -30198,6 +30358,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -30317,6 +30487,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -30486,6 +30666,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -30615,6 +30805,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -30706,6 +30906,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -30811,6 +31021,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -30931,6 +31151,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -31038,6 +31268,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -31165,6 +31405,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -31246,6 +31496,16 @@
           },
           "404": {
             "description": "The requested environment definition was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -31341,6 +31601,16 @@
           },
           "404": {
             "description": "The requested environment definition was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -31461,6 +31731,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -31556,6 +31836,16 @@
           },
           "409": {
             "description": "The request conflicted with the current environment state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -31727,6 +32017,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -31832,7 +32132,7 @@
             }
           },
           "429": {
-            "description": "The Files API rate limit for your user has been exceeded.",
+            "description": "The Files API rate limit for your user has been exceeded. This status also applies to the endpoint rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -31942,6 +32242,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -32062,6 +32372,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -32157,6 +32477,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -32319,6 +32649,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -32435,6 +32775,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -32541,6 +32891,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -32666,6 +33026,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -32773,6 +33143,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -32893,6 +33273,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -33032,6 +33422,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -33180,6 +33580,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -33320,6 +33730,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -33428,6 +33848,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -33578,6 +34008,16 @@
           },
           "409": {
             "description": "The request conflicted with the current session state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -33747,6 +34187,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -33838,6 +34288,16 @@
           },
           "409": {
             "description": "The request conflicted with the current vault state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -33943,6 +34403,16 @@
           },
           "409": {
             "description": "The request conflicted with the current vault state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -34064,6 +34534,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -34159,6 +34639,16 @@
           },
           "409": {
             "description": "The request conflicted with the current vault state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -34339,6 +34829,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -34443,6 +34943,16 @@
           },
           "409": {
             "description": "The request conflicted with the current vault state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -34559,6 +35069,16 @@
           },
           "409": {
             "description": "The request conflicted with the current vault state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -34696,6 +35216,16 @@
               }
             }
           },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
           "500": {
             "description": "An internal error occurred.",
             "content": {
@@ -34802,6 +35332,16 @@
           },
           "409": {
             "description": "The request conflicted with the current vault state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse-2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The request exceeded this endpoint's rate limit.",
             "content": {
               "application/json": {
                 "schema": {
@@ -36996,10 +37536,7 @@
           "object": {
             "description": "The object type, which is always `assistant`.",
             "type": "string",
-            "enum": [
-              "assistant"
-            ],
-            "x-stainless-const": true
+            "const": "assistant"
           },
           "created_at": {
             "description": "The Unix timestamp (in seconds) for when the assistant was created.",
@@ -37279,10 +37816,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool being defined: `code_interpreter`",
-            "enum": [
-              "code_interpreter"
-            ],
-            "x-stainless-const": true
+            "const": "code_interpreter"
           }
         },
         "required": [
@@ -37296,10 +37830,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool being defined: `file_search`",
-            "enum": [
-              "file_search"
-            ],
-            "x-stainless-const": true
+            "const": "file_search"
           },
           "file_search": {
             "type": "object",
@@ -37328,10 +37859,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool being defined: `file_search`",
-            "enum": [
-              "file_search"
-            ],
-            "x-stainless-const": true
+            "const": "file_search"
           }
         },
         "required": [
@@ -37345,10 +37873,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool being defined: `function`",
-            "enum": [
-              "function"
-            ],
-            "x-stainless-const": true
+            "const": "function"
           },
           "function": {
             "$ref": "#/components/schemas/FunctionObject"
@@ -40954,11 +41479,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "files"
-            ],
-            "description": "The type of the code interpreter file output. Always `files`.\n",
-            "x-stainless-const": true
+            "const": "files",
+            "description": "The type of the code interpreter file output. Always `files`.\n"
           },
           "files": {
             "type": "array",
@@ -40993,11 +41515,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "logs"
-            ],
-            "description": "The type of the code interpreter text output. Always `logs`.\n",
-            "x-stainless-const": true
+            "const": "logs",
+            "description": "The type of the code interpreter text output. Always `logs`.\n"
           },
           "logs": {
             "type": "string",
@@ -41016,11 +41535,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "code_interpreter"
-            ],
-            "description": "The type of the code interpreter tool. Always `code_interpreter`.\n",
-            "x-stainless-const": true
+            "const": "code_interpreter",
+            "description": "The type of the code interpreter tool. Always `code_interpreter`.\n"
           },
           "container": {
             "description": "The code interpreter container. Can be a container ID or an object that\nspecifies uploaded file IDs to make available to your code, along with an\noptional `memory_limit` setting.\n",
@@ -41062,11 +41578,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "code_interpreter_call"
-            ],
+            "const": "code_interpreter_call",
             "default": "code_interpreter_call",
-            "x-stainless-const": true,
             "description": "The type of the code interpreter tool call. Always `code_interpreter_call`.\n"
           },
           "id": {
@@ -41934,10 +42447,7 @@
           },
           "object": {
             "type": "string",
-            "enum": [
-              "organization.costs.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.costs.result"
           },
           "amount": {
             "type": "object",
@@ -43679,12 +44189,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "custom"
-            ],
+            "const": "custom",
             "default": "custom",
-            "description": "The type of data source. Always `custom`.",
-            "x-stainless-const": true
+            "description": "The type of data source. Always `custom`."
           },
           "item_schema": {
             "type": "object",
@@ -43746,12 +44253,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "jsonl"
-            ],
+            "const": "jsonl",
             "default": "jsonl",
-            "description": "The type of data source. Always `jsonl`.",
-            "x-stainless-const": true
+            "description": "The type of data source. Always `jsonl`."
           },
           "source": {
             "description": "Determines what populates the `item` namespace in the data source.",
@@ -43783,10 +44287,7 @@
           "type": {
             "description": "The object type, which is always `label_model`.",
             "type": "string",
-            "enum": [
-              "label_model"
-            ],
-            "x-stainless-const": true
+            "const": "label_model"
           },
           "name": {
             "type": "string",
@@ -43839,12 +44340,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "logs"
-            ],
+            "const": "logs",
             "default": "logs",
-            "description": "The type of data source. Always `logs`.",
-            "x-stainless-const": true
+            "description": "The type of data source. Always `logs`."
           },
           "metadata": {
             "type": "object",
@@ -44112,12 +44610,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "stored_completions"
-            ],
+            "const": "stored_completions",
             "default": "stored_completions",
-            "description": "The type of data source. Always `stored_completions`.",
-            "x-stainless-const": true
+            "description": "The type of data source. Always `stored_completions`."
           },
           "metadata": {
             "type": "object",
@@ -46591,10 +47086,7 @@
           "task": {
             "type": "string",
             "description": "The type of task that was run. Always `transcribe`.",
-            "enum": [
-              "transcribe"
-            ],
-            "x-stainless-const": true
+            "const": "transcribe"
           },
           "duration": {
             "type": "number",
@@ -47142,10 +47634,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "custom_tool_call"
-            ],
-            "x-stainless-const": true,
+            "const": "custom_tool_call",
             "description": "The type of the custom tool call. Always `custom_tool_call`.\n"
           },
           "id": {
@@ -47197,10 +47686,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "custom_tool_call_output"
-            ],
-            "x-stainless-const": true,
+            "const": "custom_tool_call_output",
             "description": "The type of the custom tool call output. Always `custom_tool_call_output`.\n"
           },
           "id": {
@@ -47416,10 +47902,7 @@
           },
           "object": {
             "type": "string",
-            "enum": [
-              "assistant.deleted"
-            ],
-            "x-stainless-const": true
+            "const": "assistant.deleted"
           }
         },
         "required": [
@@ -47500,10 +47983,7 @@
           },
           "object": {
             "type": "string",
-            "enum": [
-              "thread.message.deleted"
-            ],
-            "x-stainless-const": true
+            "const": "thread.message.deleted"
           }
         },
         "required": [
@@ -47542,10 +48022,7 @@
           },
           "object": {
             "type": "string",
-            "enum": [
-              "thread.deleted"
-            ],
-            "x-stainless-const": true
+            "const": "thread.deleted"
           }
         },
         "required": [
@@ -47633,17 +48110,11 @@
         "properties": {
           "event": {
             "type": "string",
-            "enum": [
-              "done"
-            ],
-            "x-stainless-const": true
+            "const": "done"
           },
           "data": {
             "type": "string",
-            "enum": [
-              "[DONE]"
-            ],
-            "x-stainless-const": true
+            "const": "[DONE]"
           }
         },
         "required": [
@@ -47696,10 +48167,7 @@
           "type": {
             "type": "string",
             "description": "The type of the message input. Always `message`.\n",
-            "enum": [
-              "message"
-            ],
-            "x-stainless-const": true
+            "const": "message"
           }
         },
         "required": [
@@ -48046,10 +48514,7 @@
         "properties": {
           "event": {
             "type": "string",
-            "enum": [
-              "error"
-            ],
-            "x-stainless-const": true
+            "const": "error"
           },
           "data": {
             "$ref": "#/components/schemas/Error"
@@ -48082,12 +48547,9 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "eval"
-            ],
+            "const": "eval",
             "default": "eval",
-            "description": "The object type.",
-            "x-stainless-const": true
+            "description": "The object type."
           },
           "id": {
             "type": "string",
@@ -48191,12 +48653,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "custom"
-            ],
+            "const": "custom",
             "default": "custom",
-            "description": "The type of data source. Always `custom`.",
-            "x-stainless-const": true
+            "description": "The type of data source. Always `custom`."
           },
           "schema": {
             "type": "object",
@@ -48339,10 +48798,7 @@
           "type": {
             "type": "string",
             "description": "The type of the message input. Always `message`.\n",
-            "enum": [
-              "message"
-            ],
-            "x-stainless-const": true
+            "const": "message"
           }
         },
         "required": [
@@ -48399,10 +48855,7 @@
           "type": {
             "type": "string",
             "description": "The type of the output text. Always `output_text`.\n",
-            "enum": [
-              "output_text"
-            ],
-            "x-stainless-const": true
+            "const": "output_text"
           },
           "text": {
             "type": "string",
@@ -48427,10 +48880,7 @@
           "type": {
             "type": "string",
             "description": "The type of the image input. Always `input_image`.\n",
-            "enum": [
-              "input_image"
-            ],
-            "x-stainless-const": true
+            "const": "input_image"
           },
           "image_url": {
             "type": "string",
@@ -48453,12 +48903,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "file_content"
-            ],
+            "const": "file_content",
             "default": "file_content",
-            "description": "The type of jsonl source. Always `file_content`.",
-            "x-stainless-const": true
+            "description": "The type of jsonl source. Always `file_content`."
           },
           "content": {
             "type": "array",
@@ -48492,12 +48939,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "file_id"
-            ],
+            "const": "file_id",
             "default": "file_id",
-            "description": "The type of jsonl source. Always `file_id`.",
-            "x-stainless-const": true
+            "description": "The type of jsonl source. Always `file_id`."
           },
           "id": {
             "type": "string",
@@ -48516,12 +48960,9 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
+            "const": "list",
             "default": "list",
-            "description": "The type of this object. It is always set to \"list\".\n",
-            "x-stainless-const": true
+            "description": "The type of this object. It is always set to \"list\".\n"
           },
           "data": {
             "type": "array",
@@ -48563,12 +49004,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "logs"
-            ],
+            "const": "logs",
             "default": "logs",
-            "description": "The type of data source. Always `logs`.",
-            "x-stainless-const": true
+            "description": "The type of data source. Always `logs`."
           },
           "metadata": {
             "$ref": "#/components/schemas/Metadata"
@@ -48736,12 +49174,9 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "eval.run"
-            ],
+            "const": "eval.run",
             "default": "eval.run",
-            "description": "The type of the object. Always \"eval.run\".",
-            "x-stainless-const": true
+            "description": "The type of the object. Always \"eval.run\"."
           },
           "id": {
             "type": "string",
@@ -48938,12 +49373,9 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
+            "const": "list",
             "default": "list",
-            "description": "The type of this object. It is always set to \"list\".\n",
-            "x-stainless-const": true
+            "description": "The type of this object. It is always set to \"list\".\n"
           },
           "data": {
             "type": "array",
@@ -48985,12 +49417,9 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "eval.run.output_item"
-            ],
+            "const": "eval.run.output_item",
             "default": "eval.run.output_item",
-            "description": "The type of the object. Always \"eval.run.output_item\".",
-            "x-stainless-const": true
+            "description": "The type of the object. Always \"eval.run.output_item\"."
           },
           "id": {
             "type": "string",
@@ -49174,12 +49603,9 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
+            "const": "list",
             "default": "list",
-            "description": "The type of this object. It is always set to \"list\".\n",
-            "x-stainless-const": true
+            "description": "The type of this object. It is always set to \"list\".\n"
           },
           "data": {
             "type": "array",
@@ -49262,12 +49688,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "stored_completions"
-            ],
+            "const": "stored_completions",
             "default": "stored_completions",
-            "description": "The type of data source. Always `stored_completions`.",
-            "x-stainless-const": true
+            "description": "The type of data source. Always `stored_completions`."
           },
           "metadata": {
             "$ref": "#/components/schemas/Metadata"
@@ -49296,12 +49719,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "stored_completions"
-            ],
+            "const": "stored_completions",
             "default": "stored_completions",
-            "description": "The type of source. Always `stored_completions`.",
-            "x-stainless-const": true
+            "description": "The type of source. Always `stored_completions`."
           },
           "metadata": {
             "$ref": "#/components/schemas/Metadata"
@@ -49368,10 +49788,7 @@
           "anchor": {
             "description": "Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.",
             "type": "string",
-            "enum": [
-              "created_at"
-            ],
-            "x-stainless-const": true
+            "const": "created_at"
           },
           "seconds": {
             "description": "The number of seconds after the anchor time that the file will expire. Must be between 3600 (1 hour) and 2592000 (30 days).",
@@ -49394,10 +49811,7 @@
           "type": {
             "type": "string",
             "description": "The type of the file path. Always `file_path`.\n",
-            "enum": [
-              "file_path"
-            ],
-            "x-stainless-const": true
+            "const": "file_path"
           },
           "file_id": {
             "type": "string",
@@ -49452,11 +49866,8 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "file_search_call"
-            ],
-            "description": "The type of the file search tool call. Always `file_search_call`.\n",
-            "x-stainless-const": true
+            "const": "file_search_call",
+            "description": "The type of the file search tool call. Always `file_search_call`.\n"
           },
           "status": {
             "type": "string",
@@ -50613,10 +51024,7 @@
           "type": {
             "description": "The object type, which is always `label_model`.",
             "type": "string",
-            "enum": [
-              "label_model"
-            ],
-            "x-stainless-const": true
+            "const": "label_model"
           },
           "name": {
             "type": "string",
@@ -50668,12 +51076,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "multi"
-            ],
+            "const": "multi",
             "default": "multi",
-            "description": "The object type, which is always `multi`.",
-            "x-stainless-const": true
+            "description": "The object type, which is always `multi`."
           },
           "name": {
             "type": "string",
@@ -50736,11 +51141,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "python"
-            ],
-            "description": "The object type, which is always `python`.",
-            "x-stainless-const": true
+            "const": "python",
+            "description": "The object type, which is always `python`."
           },
           "name": {
             "type": "string",
@@ -50773,11 +51175,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "score_model"
-            ],
-            "description": "The object type, which is always `score_model`.",
-            "x-stainless-const": true
+            "const": "score_model",
+            "description": "The object type, which is always `score_model`."
           },
           "name": {
             "type": "string",
@@ -50877,11 +51276,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "string_check"
-            ],
-            "description": "The object type, which is always `string_check`.",
-            "x-stainless-const": true
+            "const": "string_check",
+            "description": "The object type, which is always `string_check`."
           },
           "name": {
             "type": "string",
@@ -50926,12 +51322,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "text_similarity"
-            ],
+            "const": "text_similarity",
             "default": "text_similarity",
-            "description": "The type of grader.",
-            "x-stainless-const": true
+            "description": "The type of grader."
           },
           "name": {
             "type": "string",
@@ -50982,11 +51375,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "group"
-            ],
-            "description": "Always `group`.",
-            "x-stainless-const": true
+            "const": "group",
+            "description": "Always `group`."
           },
           "id": {
             "type": "string",
@@ -51024,11 +51414,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "group.deleted"
-            ],
-            "description": "Always `group.deleted`.",
-            "x-stainless-const": true
+            "const": "group.deleted",
+            "description": "Always `group.deleted`."
           },
           "id": {
             "type": "string",
@@ -51054,11 +51441,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "description": "Always `list`.",
-            "x-stainless-const": true
+            "const": "list",
+            "description": "Always `list`."
           },
           "data": {
             "type": "array",
@@ -51241,11 +51625,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "group.role"
-            ],
-            "description": "Always `group.role`.",
-            "x-stainless-const": true
+            "const": "group.role",
+            "description": "Always `group.role`."
           },
           "group": {
             "$ref": "#/components/schemas/Group"
@@ -51300,11 +51681,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "group.user"
-            ],
-            "description": "Always `group.user`.",
-            "x-stainless-const": true
+            "const": "group.user",
+            "description": "Always `group.user`."
           },
           "user_id": {
             "type": "string",
@@ -51331,11 +51709,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "group.user.deleted"
-            ],
-            "description": "Always `group.user.deleted`.",
-            "x-stainless-const": true
+            "const": "group.user.deleted",
+            "description": "Always `group.user.deleted`."
           },
           "deleted": {
             "type": "boolean",
@@ -51784,11 +52159,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "image_generation"
-            ],
-            "description": "The type of the image generation tool. Always `image_generation`.\n",
-            "x-stainless-const": true
+            "const": "image_generation",
+            "description": "The type of the image generation tool. Always `image_generation`.\n"
           },
           "model": {
             "anyOf": [
@@ -53976,11 +54348,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "local_shell_call"
-            ],
-            "description": "The type of the local shell call. Always `local_shell_call`.\n",
-            "x-stainless-const": true
+            "const": "local_shell_call",
+            "description": "The type of the local shell call. Always `local_shell_call`.\n"
           },
           "id": {
             "type": "string",
@@ -54018,11 +54387,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "local_shell_call_output"
-            ],
-            "description": "The type of the local shell tool call output. Always `local_shell_call_output`.\n",
-            "x-stainless-const": true
+            "const": "local_shell_call_output",
+            "description": "The type of the local shell tool call output. Always `local_shell_call_output`.\n"
           },
           "id": {
             "type": "string",
@@ -54554,10 +54920,7 @@
           "type": {
             "description": "Always `image_file`.",
             "type": "string",
-            "enum": [
-              "image_file"
-            ],
-            "x-stainless-const": true
+            "const": "image_file"
           },
           "image_file": {
             "type": "object",
@@ -54594,11 +54957,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "image_url"
-            ],
-            "description": "The type of the content part.",
-            "x-stainless-const": true
+            "const": "image_url",
+            "description": "The type of the content part."
           },
           "image_url": {
             "type": "object",
@@ -54637,10 +54997,7 @@
           "type": {
             "description": "Always `refusal`.",
             "type": "string",
-            "enum": [
-              "refusal"
-            ],
-            "x-stainless-const": true
+            "const": "refusal"
           },
           "refusal": {
             "type": "string"
@@ -54659,10 +55016,7 @@
           "type": {
             "description": "Always `file_citation`.",
             "type": "string",
-            "enum": [
-              "file_citation"
-            ],
-            "x-stainless-const": true
+            "const": "file_citation"
           },
           "text": {
             "description": "The text in the message content that needs to be replaced.",
@@ -54705,10 +55059,7 @@
           "type": {
             "description": "Always `file_path`.",
             "type": "string",
-            "enum": [
-              "file_path"
-            ],
-            "x-stainless-const": true
+            "const": "file_path"
           },
           "text": {
             "description": "The text in the message content that needs to be replaced.",
@@ -54751,10 +55102,7 @@
           "type": {
             "description": "Always `text`.",
             "type": "string",
-            "enum": [
-              "text"
-            ],
-            "x-stainless-const": true
+            "const": "text"
           },
           "text": {
             "type": "object",
@@ -54800,10 +55148,7 @@
           "type": {
             "description": "Always `image_file`.",
             "type": "string",
-            "enum": [
-              "image_file"
-            ],
-            "x-stainless-const": true
+            "const": "image_file"
           },
           "image_file": {
             "type": "object",
@@ -54842,10 +55187,7 @@
           "type": {
             "description": "Always `image_url`.",
             "type": "string",
-            "enum": [
-              "image_url"
-            ],
-            "x-stainless-const": true
+            "const": "image_url"
           },
           "image_url": {
             "type": "object",
@@ -54885,10 +55227,7 @@
           "type": {
             "description": "Always `refusal`.",
             "type": "string",
-            "enum": [
-              "refusal"
-            ],
-            "x-stainless-const": true
+            "const": "refusal"
           },
           "refusal": {
             "type": "string"
@@ -54911,10 +55250,7 @@
           "type": {
             "description": "Always `file_citation`.",
             "type": "string",
-            "enum": [
-              "file_citation"
-            ],
-            "x-stainless-const": true
+            "const": "file_citation"
           },
           "text": {
             "description": "The text in the message content that needs to be replaced.",
@@ -54959,10 +55295,7 @@
           "type": {
             "description": "Always `file_path`.",
             "type": "string",
-            "enum": [
-              "file_path"
-            ],
-            "x-stainless-const": true
+            "const": "file_path"
           },
           "text": {
             "description": "The text in the message content that needs to be replaced.",
@@ -55003,10 +55336,7 @@
           "type": {
             "description": "Always `text`.",
             "type": "string",
-            "enum": [
-              "text"
-            ],
-            "x-stainless-const": true
+            "const": "text"
           },
           "text": {
             "type": "object",
@@ -55048,10 +55378,7 @@
           "object": {
             "description": "The object type, which is always `thread.message.delta`.",
             "type": "string",
-            "enum": [
-              "thread.message.delta"
-            ],
-            "x-stainless-const": true
+            "const": "thread.message.delta"
           },
           "delta": {
             "description": "The delta containing the fields that have changed on the Message.",
@@ -55111,10 +55438,7 @@
           "object": {
             "description": "The object type, which is always `thread.message`.",
             "type": "string",
-            "enum": [
-              "thread.message"
-            ],
-            "x-stainless-const": true
+            "const": "thread.message"
           },
           "created_at": {
             "description": "The Unix timestamp (in seconds) for when the message was created.",
@@ -55311,10 +55635,7 @@
           "type": {
             "description": "Always `text`.",
             "type": "string",
-            "enum": [
-              "text"
-            ],
-            "x-stainless-const": true
+            "const": "text"
           },
           "text": {
             "type": "string",
@@ -55449,7 +55770,7 @@
         "anyOf": [
           {
             "type": "object",
-            "description": "Set of 16 key-value pairs that can be attached to an object. This can be\nuseful for storing additional information about the object in a structured\nformat, and querying for objects via API or the dashboard.\n\nKeys are strings with a maximum length of 64 characters. Values are strings\nwith a maximum length of 512 characters.\n",
+            "description": "Set of 16 key-value pairs that can be attached to an object. This can be\nuseful for storing additional information about the object in a structured\nformat.\n\nKeys are strings with a maximum length of 64 characters. Values are strings\nwith a maximum length of 512 characters.\n",
             "additionalProperties": {
               "type": "string"
             },
@@ -55579,7 +55900,11 @@
               "gpt-6-cyber",
               "gpt-rosalind-research",
               "gpt-6-rosalind",
-              "gpt-6.2-astra-law"
+              "gpt-6.2-astra-law",
+              "gpt-6-astra-healthcare",
+              "gpt-6.1-sol-healthcare",
+              "gpt-6.2-astra-healthcare",
+              "gpt-6.2-sol-healthcare"
             ],
             "x-openai-enum-deprecations": {
               "o1-pro": {
@@ -56989,11 +57314,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "content"
-            ],
-            "description": "The type of the predicted content you want to provide. This type is\ncurrently always `content`.\n",
-            "x-stainless-const": true
+            "const": "content",
+            "description": "The type of the predicted content you want to provide. This type is\ncurrently always `content`.\n"
           },
           "content": {
             "description": "The content that should be matched when generating a model response.\nIf generated tokens would match this content, the entire model response\ncan be returned much more quickly.\n",
@@ -58498,11 +58820,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "description": "Always `list`.",
-            "x-stainless-const": true
+            "const": "list",
+            "description": "Always `list`."
           },
           "data": {
             "type": "array",
@@ -67601,10 +67920,7 @@
           "type": {
             "type": "string",
             "description": "The type of the object. Always `reasoning`.\n",
-            "enum": [
-              "reasoning"
-            ],
-            "x-stainless-const": true
+            "const": "reasoning"
           },
           "id": {
             "type": "string",
@@ -72592,11 +72908,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "role"
-            ],
-            "description": "Always `role`.",
-            "x-stainless-const": true
+            "const": "role",
+            "description": "Always `role`."
           },
           "id": {
             "type": "string",
@@ -72653,11 +72966,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "role.deleted"
-            ],
-            "description": "Always `role.deleted`.",
-            "x-stainless-const": true
+            "const": "role.deleted",
+            "description": "Always `role.deleted`."
           },
           "id": {
             "type": "string",
@@ -72684,11 +72994,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "description": "Always `list`.",
-            "x-stainless-const": true
+            "const": "list",
+            "description": "Always `list`."
           },
           "data": {
             "type": "array",
@@ -72990,10 +73297,7 @@
           "object": {
             "description": "The object type, which is always `thread.run`.",
             "type": "string",
-            "enum": [
-              "thread.run"
-            ],
-            "x-stainless-const": true
+            "const": "thread.run"
           },
           "created_at": {
             "description": "The Unix timestamp (in seconds) for when the run was created.",
@@ -73315,10 +73619,7 @@
           "object": {
             "description": "The object type, which is always `thread.run.step.delta`.",
             "type": "string",
-            "enum": [
-              "thread.run.step.delta"
-            ],
-            "x-stainless-const": true
+            "const": "thread.run.step.delta"
           },
           "delta": {
             "description": "The delta containing the fields that have changed on the run step.",
@@ -73358,10 +73659,7 @@
           "type": {
             "description": "Always `message_creation`.",
             "type": "string",
-            "enum": [
-              "message_creation"
-            ],
-            "x-stainless-const": true
+            "const": "message_creation"
           },
           "message_creation": {
             "type": "object",
@@ -73393,10 +73691,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool call. This is always going to be `code_interpreter` for this type of tool call.",
-            "enum": [
-              "code_interpreter"
-            ],
-            "x-stainless-const": true
+            "const": "code_interpreter"
           },
           "code_interpreter": {
             "type": "object",
@@ -73440,10 +73735,7 @@
           "type": {
             "description": "Always `image`.",
             "type": "string",
-            "enum": [
-              "image"
-            ],
-            "x-stainless-const": true
+            "const": "image"
           },
           "image": {
             "type": "object",
@@ -73472,10 +73764,7 @@
           "type": {
             "description": "Always `logs`.",
             "type": "string",
-            "enum": [
-              "logs"
-            ],
-            "x-stainless-const": true
+            "const": "logs"
           },
           "logs": {
             "type": "string",
@@ -73502,10 +73791,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool call. This is always going to be `file_search` for this type of tool call.",
-            "enum": [
-              "file_search"
-            ],
-            "x-stainless-const": true
+            "const": "file_search"
           },
           "file_search": {
             "type": "object",
@@ -73534,10 +73820,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool call. This is always going to be `function` for this type of tool call.",
-            "enum": [
-              "function"
-            ],
-            "x-stainless-const": true
+            "const": "function"
           },
           "function": {
             "type": "object",
@@ -73578,10 +73861,7 @@
           "type": {
             "description": "Always `tool_calls`.",
             "type": "string",
-            "enum": [
-              "tool_calls"
-            ],
-            "x-stainless-const": true
+            "const": "tool_calls"
           },
           "tool_calls": {
             "type": "array",
@@ -73613,10 +73893,7 @@
           "type": {
             "description": "Always `message_creation`.",
             "type": "string",
-            "enum": [
-              "message_creation"
-            ],
-            "x-stainless-const": true
+            "const": "message_creation"
           },
           "message_creation": {
             "type": "object",
@@ -73648,10 +73925,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool call. This is always going to be `code_interpreter` for this type of tool call.",
-            "enum": [
-              "code_interpreter"
-            ],
-            "x-stainless-const": true
+            "const": "code_interpreter"
           },
           "code_interpreter": {
             "type": "object",
@@ -73696,10 +73970,7 @@
           "type": {
             "description": "Always `image`.",
             "type": "string",
-            "enum": [
-              "image"
-            ],
-            "x-stainless-const": true
+            "const": "image"
           },
           "image": {
             "type": "object",
@@ -73727,10 +73998,7 @@
           "type": {
             "description": "Always `logs`.",
             "type": "string",
-            "enum": [
-              "logs"
-            ],
-            "x-stainless-const": true
+            "const": "logs"
           },
           "logs": {
             "type": "string",
@@ -73753,10 +74021,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool call. This is always going to be `file_search` for this type of tool call.",
-            "enum": [
-              "file_search"
-            ],
-            "x-stainless-const": true
+            "const": "file_search"
           },
           "file_search": {
             "type": "object",
@@ -73861,10 +74126,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool call. This is always going to be `function` for this type of tool call.",
-            "enum": [
-              "function"
-            ],
-            "x-stainless-const": true
+            "const": "function"
           },
           "function": {
             "type": "object",
@@ -73911,10 +74173,7 @@
           "type": {
             "description": "Always `tool_calls`.",
             "type": "string",
-            "enum": [
-              "tool_calls"
-            ],
-            "x-stainless-const": true
+            "const": "tool_calls"
           },
           "tool_calls": {
             "type": "array",
@@ -73951,10 +74210,7 @@
           "object": {
             "description": "The object type, which is always `thread.run.step`.",
             "type": "string",
-            "enum": [
-              "thread.run.step"
-            ],
-            "x-stainless-const": true
+            "const": "thread.run.step"
           },
           "created_at": {
             "description": "The Unix timestamp (in seconds) for when the run step was created.",
@@ -74522,10 +74778,7 @@
           "type": {
             "type": "string",
             "description": "The type of tool call the output is required for. For now, this is always `function`.",
-            "enum": [
-              "function"
-            ],
-            "x-stainless-const": true
+            "const": "function"
           },
           "function": {
             "type": "object",
@@ -74838,10 +75091,7 @@
           "type": {
             "type": "string",
             "description": "The type of response format being defined. Always `json_schema`.",
-            "enum": [
-              "json_schema"
-            ],
-            "x-stainless-const": true
+            "const": "json_schema"
           },
           "description": {
             "type": "string",
@@ -74885,10 +75135,7 @@
           "object": {
             "description": "The object type, which is always `thread`.",
             "type": "string",
-            "enum": [
-              "thread"
-            ],
-            "x-stainless-const": true
+            "const": "thread"
           },
           "created_at": {
             "description": "The Unix timestamp (in seconds) for when the thread was created.",
@@ -75063,11 +75310,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "allowed_tools"
-            ],
-            "description": "Allowed tool configuration type. Always `allowed_tools`.",
-            "x-stainless-const": true
+            "const": "allowed_tools",
+            "description": "Allowed tool configuration type. Always `allowed_tools`."
           },
           "mode": {
             "type": "string",
@@ -75101,11 +75345,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "custom"
-            ],
-            "description": "For custom tool calling, the type is always `custom`.",
-            "x-stainless-const": true
+            "const": "custom",
+            "description": "For custom tool calling, the type is always `custom`."
           },
           "name": {
             "type": "string",
@@ -75124,11 +75365,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "function"
-            ],
-            "description": "For function calling, the type is always `function`.",
-            "x-stainless-const": true
+            "const": "function",
+            "description": "For function calling, the type is always `function`."
           },
           "name": {
             "type": "string",
@@ -75147,11 +75385,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "mcp"
-            ],
-            "description": "For MCP tools, the type is always `mcp`.",
-            "x-stainless-const": true
+            "const": "mcp",
+            "description": "For MCP tools, the type is always `mcp`."
           },
           "server_label": {
             "type": "string",
@@ -75310,10 +75545,7 @@
           "type": {
             "type": "string",
             "description": "The type of the event. Always `transcript.text.delta`.\n",
-            "enum": [
-              "transcript.text.delta"
-            ],
-            "x-stainless-const": true
+            "const": "transcript.text.delta"
           },
           "delta": {
             "type": "string",
@@ -75365,10 +75597,7 @@
           "type": {
             "type": "string",
             "description": "The type of the event. Always `transcript.text.done`.\n",
-            "enum": [
-              "transcript.text.done"
-            ],
-            "x-stainless-const": true
+            "const": "transcript.text.done"
           },
           "text": {
             "type": "string",
@@ -75426,10 +75655,7 @@
           "type": {
             "type": "string",
             "description": "The type of the event. Always `transcript.text.segment`.",
-            "enum": [
-              "transcript.text.segment"
-            ],
-            "x-stainless-const": true
+            "const": "transcript.text.segment"
           },
           "id": {
             "type": "string",
@@ -75475,11 +75701,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "duration"
-            ],
-            "description": "The type of the usage object. Always `duration` for this variant.",
-            "x-stainless-const": true
+            "const": "duration",
+            "description": "The type of the usage object. Always `duration` for this variant."
           },
           "seconds": {
             "type": "number",
@@ -75499,11 +75722,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "tokens"
-            ],
-            "description": "The type of the usage object. Always `tokens` for this variant.",
-            "x-stainless-const": true
+            "const": "tokens",
+            "description": "The type of the usage object. Always `tokens` for this variant."
           },
           "input_tokens": {
             "type": "integer",
@@ -75560,10 +75780,7 @@
           "type": {
             "type": "string",
             "description": "The type of the segment. Always `transcript.text.segment`.\n",
-            "enum": [
-              "transcript.text.segment"
-            ],
-            "x-stainless-const": true
+            "const": "transcript.text.segment"
           },
           "id": {
             "type": "string",
@@ -75995,10 +76212,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.audio_speeches.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.audio_speeches.result"
           },
           "characters": {
             "type": "integer",
@@ -76069,10 +76283,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.audio_transcriptions.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.audio_transcriptions.result"
           },
           "seconds": {
             "type": "integer",
@@ -76144,10 +76355,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.code_interpreter_sessions.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.code_interpreter_sessions.result"
           },
           "num_sessions": {
             "type": "integer",
@@ -76195,10 +76403,7 @@
           },
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.completions.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.completions.result"
           },
           "input_tokens": {
             "type": "integer",
@@ -76359,10 +76564,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.embeddings.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.embeddings.result"
           },
           "input_tokens": {
             "type": "integer",
@@ -76433,10 +76635,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.file_searches.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.file_searches.result"
           },
           "num_requests": {
             "type": "integer",
@@ -76502,10 +76701,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.images.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.images.result"
           },
           "images": {
             "type": "integer",
@@ -76598,10 +76794,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.moderations.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.moderations.result"
           },
           "input_tokens": {
             "type": "integer",
@@ -76671,10 +76864,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "page"
-            ],
-            "x-stainless-const": true
+            "const": "page"
           },
           "data": {
             "type": "array",
@@ -76708,10 +76898,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "bucket"
-            ],
-            "x-stainless-const": true
+            "const": "bucket"
           },
           "start_time": {
             "type": "integer"
@@ -76776,10 +76963,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.vector_stores.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.vector_stores.result"
           },
           "usage_bytes": {
             "type": "integer",
@@ -76827,10 +77011,7 @@
           },
           "object": {
             "type": "string",
-            "enum": [
-              "organization.usage.web_searches.result"
-            ],
-            "x-stainless-const": true
+            "const": "organization.usage.web_searches.result"
           },
           "num_model_requests": {
             "type": "integer",
@@ -76912,11 +77093,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.user"
-            ],
-            "description": "The object type, which is always `organization.user`",
-            "x-stainless-const": true
+            "const": "organization.user",
+            "description": "The object type, which is always `organization.user`"
           },
           "id": {
             "type": "string",
@@ -77181,10 +77359,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "organization.user.deleted"
-            ],
-            "x-stainless-const": true
+            "const": "organization.user.deleted"
           },
           "id": {
             "type": "string"
@@ -77205,11 +77380,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "description": "Always `list`.",
-            "x-stainless-const": true
+            "const": "list",
+            "description": "Always `list`."
           },
           "data": {
             "type": "array",
@@ -77250,10 +77422,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "x-stainless-const": true
+            "const": "list"
           },
           "data": {
             "type": "array",
@@ -77297,11 +77466,8 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "user.role"
-            ],
-            "description": "Always `user.role`.",
-            "x-stainless-const": true
+            "const": "user.role",
+            "description": "Always `user.role`."
           },
           "user": {
             "$ref": "#/components/schemas/User"
@@ -78069,10 +78235,7 @@
           },
           "object": {
             "type": "string",
-            "enum": [
-              "audio.voice_consent"
-            ],
-            "x-stainless-const": true
+            "const": "audio.voice_consent"
           },
           "deleted": {
             "type": "boolean"
@@ -78094,10 +78257,7 @@
         "properties": {
           "object": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
-            "x-stainless-const": true
+            "const": "list"
           },
           "data": {
             "type": "array",
@@ -78148,10 +78308,7 @@
           "object": {
             "type": "string",
             "description": "The object type, which is always `audio.voice_consent`.",
-            "enum": [
-              "audio.voice_consent"
-            ],
-            "x-stainless-const": true
+            "const": "audio.voice_consent"
           },
           "id": {
             "type": "string",
@@ -78195,10 +78352,7 @@
           },
           "object": {
             "type": "string",
-            "enum": [
-              "audio.voice.deleted"
-            ],
-            "x-stainless-const": true,
+            "const": "audio.voice.deleted",
             "description": "The object type, which is always `audio.voice.deleted`."
           },
           "deleted": {
@@ -78272,10 +78426,7 @@
           "object": {
             "type": "string",
             "description": "The object type, which is always `audio.voice`.",
-            "enum": [
-              "audio.voice"
-            ],
-            "x-stainless-const": true
+            "const": "audio.voice"
           },
           "id": {
             "type": "string",
@@ -116849,11 +117000,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "custom"
-            ],
-            "description": "For custom tool calling, the type is always `custom`.",
-            "x-stainless-const": true
+            "const": "custom",
+            "description": "For custom tool calling, the type is always `custom`."
           },
           "name": {
             "type": "string",
@@ -116872,11 +117020,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "mcp"
-            ],
-            "description": "For MCP tools, the type is always `mcp`.",
-            "x-stainless-const": true
+            "const": "mcp",
+            "description": "For MCP tools, the type is always `mcp`."
           },
           "server_label": {
             "type": "string",
@@ -116906,11 +117051,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "function"
-            ],
-            "description": "For function calling, the type is always `function`.",
-            "x-stainless-const": true
+            "const": "function",
+            "description": "For function calling, the type is always `function`."
           },
           "name": {
             "type": "string",
@@ -116953,11 +117095,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "allowed_tools"
-            ],
-            "description": "Allowed tool configuration type. Always `allowed_tools`.",
-            "x-stainless-const": true
+            "const": "allowed_tools",
+            "description": "Allowed tool configuration type. Always `allowed_tools`."
           },
           "mode": {
             "type": "string",
@@ -117212,10 +117351,7 @@
           "type": {
             "type": "string",
             "description": "The type of response format being defined. Always `json_schema`.",
-            "enum": [
-              "json_schema"
-            ],
-            "x-stainless-const": true
+            "const": "json_schema"
           },
           "description": {
             "type": "string",
@@ -118203,11 +118339,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "image_generation"
-            ],
-            "description": "The type of the image generation tool. Always `image_generation`.\n",
-            "x-stainless-const": true
+            "const": "image_generation",
+            "description": "The type of the image generation tool. Always `image_generation`.\n"
           },
           "model": {
             "anyOf": [
@@ -118466,11 +118599,8 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "code_interpreter"
-            ],
-            "description": "The type of the code interpreter tool. Always `code_interpreter`.\n",
-            "x-stainless-const": true
+            "const": "code_interpreter",
+            "description": "The type of the code interpreter tool. Always `code_interpreter`.\n"
           },
           "container": {
             "description": "The code interpreter container. Can be a container ID or an object that\nspecifies uploaded file IDs to make available to your code, along with an\noptional `memory_limit` setting.\n",
@@ -119572,10 +119702,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "custom_tool_call"
-            ],
-            "x-stainless-const": true,
+            "const": "custom_tool_call",
             "description": "The type of the custom tool call. Always `custom_tool_call`.\n"
           },
           "id": {
@@ -119702,10 +119829,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "custom_tool_call_output"
-            ],
-            "x-stainless-const": true,
+            "const": "custom_tool_call_output",
             "description": "The type of the custom tool call output. Always `custom_tool_call_output`.\n"
           },
           "id": {
@@ -120977,11 +121101,8 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "local_shell_call_output"
-            ],
-            "description": "The type of the local shell tool call output. Always `local_shell_call_output`.\n",
-            "x-stainless-const": true
+            "const": "local_shell_call_output",
+            "description": "The type of the local shell tool call output. Always `local_shell_call_output`.\n"
           },
           "id": {
             "type": "string",
@@ -121033,11 +121154,8 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "local_shell_call"
-            ],
-            "description": "The type of the local shell call. Always `local_shell_call`.\n",
-            "x-stainless-const": true
+            "const": "local_shell_call",
+            "description": "The type of the local shell call. Always `local_shell_call`.\n"
           },
           "id": {
             "type": "string",
@@ -121155,11 +121273,8 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "code_interpreter_call"
-            ],
+            "const": "code_interpreter_call",
             "default": "code_interpreter_call",
-            "x-stainless-const": true,
             "description": "The type of the code interpreter tool call. Always `code_interpreter_call`.\n"
           },
           "id": {
@@ -121613,10 +121728,7 @@
           "type": {
             "type": "string",
             "description": "The type of the object. Always `reasoning`.\n",
-            "enum": [
-              "reasoning"
-            ],
-            "x-stainless-const": true
+            "const": "reasoning"
           },
           "id": {
             "type": "string",
@@ -123811,11 +123923,8 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "file_search_call"
-            ],
-            "description": "The type of the file search tool call. Always `file_search_call`.\n",
-            "x-stainless-const": true
+            "const": "file_search_call",
+            "description": "The type of the file search tool call. Always `file_search_call`.\n"
           },
           "status": {
             "type": "string",
@@ -124142,10 +124251,7 @@
           "type": {
             "type": "string",
             "description": "The type of the file path. Always `file_path`.\n",
-            "enum": [
-              "file_path"
-            ],
-            "x-stainless-const": true
+            "const": "file_path"
           },
           "file_id": {
             "type": "string",
@@ -124393,10 +124499,7 @@
           "type": {
             "type": "string",
             "description": "The type of the message input. Always `message`.\n",
-            "enum": [
-              "message"
-            ],
-            "x-stainless-const": true
+            "const": "message"
           }
         },
         "required": [
@@ -124637,7 +124740,11 @@
               "gpt-6-cyber",
               "gpt-rosalind-research",
               "gpt-6-rosalind",
-              "gpt-6.2-astra-law"
+              "gpt-6.2-astra-law",
+              "gpt-6-astra-healthcare",
+              "gpt-6.1-sol-healthcare",
+              "gpt-6.2-astra-healthcare",
+              "gpt-6.2-sol-healthcare"
             ],
             "x-openai-enum-deprecations": {
               "o1-pro": {
@@ -128640,7 +128747,7 @@
         "anyOf": [
           {
             "type": "object",
-            "description": "Set of 16 key-value pairs that can be attached to an object. This can be\nuseful for storing additional information about the object in a structured\nformat, and querying for objects via API or the dashboard.\n\nKeys are strings with a maximum length of 64 characters. Values are strings\nwith a maximum length of 512 characters.\n",
+            "description": "Set of 16 key-value pairs that can be attached to an object. This can be\nuseful for storing additional information about the object in a structured\nformat.\n\nKeys are strings with a maximum length of 64 characters. Values are strings\nwith a maximum length of 512 characters.\n",
             "additionalProperties": {
               "type": "string"
             },
