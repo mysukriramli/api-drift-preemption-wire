@@ -37890,10 +37890,7 @@
           {
             "type": "string",
             "description": "`auto` is the default value\n",
-            "enum": [
-              "auto"
-            ],
-            "x-stainless-const": true
+            "const": "auto"
           },
           {
             "$ref": "#/components/schemas/ResponseFormatText"
@@ -42685,10 +42682,7 @@
                                     "type": {
                                       "type": "string",
                                       "description": "Always `auto`.",
-                                      "enum": [
-                                        "auto"
-                                      ],
-                                      "x-stainless-const": true
+                                      "const": "auto"
                                     }
                                   },
                                   "required": [
@@ -42703,10 +42697,7 @@
                                     "type": {
                                       "type": "string",
                                       "description": "Always `static`.",
-                                      "enum": [
-                                        "static"
-                                      ],
-                                      "x-stainless-const": true
+                                      "const": "static"
                                     },
                                     "static": {
                                       "type": "object",
@@ -46840,10 +46831,7 @@
                                     "type": {
                                       "type": "string",
                                       "description": "Always `auto`.",
-                                      "enum": [
-                                        "auto"
-                                      ],
-                                      "x-stainless-const": true
+                                      "const": "auto"
                                     }
                                   },
                                   "required": [
@@ -46858,10 +46846,7 @@
                                     "type": {
                                       "type": "string",
                                       "description": "Always `static`.",
-                                      "enum": [
-                                        "static"
-                                      ],
-                                      "x-stainless-const": true
+                                      "const": "static"
                                     },
                                     "static": {
                                       "type": "object",
@@ -47279,10 +47264,7 @@
               },
               {
                 "type": "string",
-                "enum": [
-                  "whisper-1"
-                ],
-                "x-stainless-const": true
+                "const": "whisper-1"
               }
             ],
             "x-oaiTypeLabel": "string"
@@ -47823,11 +47805,8 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "enum": [
-                          "text"
-                        ],
-                        "description": "Unconstrained text format. Always `text`.",
-                        "x-stainless-const": true
+                        "const": "text",
+                        "description": "Unconstrained text format. Always `text`."
                       }
                     },
                     "required": [
@@ -47842,11 +47821,8 @@
                     "properties": {
                       "type": {
                         "type": "string",
-                        "enum": [
-                          "grammar"
-                        ],
-                        "description": "Grammar format. Always `grammar`.",
-                        "x-stainless-const": true
+                        "const": "grammar",
+                        "description": "Grammar format. Always `grammar`."
                       },
                       "grammar": {
                         "type": "object",
@@ -55654,10 +55630,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.message.created"
-                ],
-                "x-stainless-const": true
+                "const": "thread.message.created"
               },
               "data": {
                 "$ref": "#/components/schemas/MessageObject"
@@ -55677,10 +55650,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.message.in_progress"
-                ],
-                "x-stainless-const": true
+                "const": "thread.message.in_progress"
               },
               "data": {
                 "$ref": "#/components/schemas/MessageObject"
@@ -55700,10 +55670,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.message.delta"
-                ],
-                "x-stainless-const": true
+                "const": "thread.message.delta"
               },
               "data": {
                 "$ref": "#/components/schemas/MessageDeltaObject"
@@ -55723,10 +55690,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.message.completed"
-                ],
-                "x-stainless-const": true
+                "const": "thread.message.completed"
               },
               "data": {
                 "$ref": "#/components/schemas/MessageObject"
@@ -55746,10 +55710,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.message.incomplete"
-                ],
-                "x-stainless-const": true
+                "const": "thread.message.incomplete"
               },
               "data": {
                 "$ref": "#/components/schemas/MessageObject"
@@ -73337,10 +73298,7 @@
               "type": {
                 "description": "For now, this is always `submit_tool_outputs`.",
                 "type": "string",
-                "enum": [
-                  "submit_tool_outputs"
-                ],
-                "x-stainless-const": true
+                "const": "submit_tool_outputs"
               },
               "submit_tool_outputs": {
                 "type": "object",
@@ -74096,10 +74054,7 @@
                 "type": {
                   "type": "string",
                   "description": "The type of the content.",
-                  "enum": [
-                    "text"
-                  ],
-                  "x-stainless-const": true
+                  "const": "text"
                 },
                 "text": {
                   "type": "string",
@@ -74375,10 +74330,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.step.created"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.step.created"
               },
               "data": {
                 "$ref": "#/components/schemas/RunStepObject"
@@ -74398,10 +74350,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.step.in_progress"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.step.in_progress"
               },
               "data": {
                 "$ref": "#/components/schemas/RunStepObject"
@@ -74421,10 +74370,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.step.delta"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.step.delta"
               },
               "data": {
                 "$ref": "#/components/schemas/RunStepDeltaObject"
@@ -74444,10 +74390,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.step.completed"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.step.completed"
               },
               "data": {
                 "$ref": "#/components/schemas/RunStepObject"
@@ -74467,10 +74410,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.step.failed"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.step.failed"
               },
               "data": {
                 "$ref": "#/components/schemas/RunStepObject"
@@ -74490,10 +74430,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.step.cancelled"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.step.cancelled"
               },
               "data": {
                 "$ref": "#/components/schemas/RunStepObject"
@@ -74513,10 +74450,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.step.expired"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.step.expired"
               },
               "data": {
                 "$ref": "#/components/schemas/RunStepObject"
@@ -74540,10 +74474,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.created"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.created"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -74563,10 +74494,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.queued"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.queued"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -74586,10 +74514,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.in_progress"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.in_progress"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -74609,10 +74534,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.requires_action"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.requires_action"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -74632,10 +74554,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.completed"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.completed"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -74655,10 +74574,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.incomplete"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.incomplete"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -74678,10 +74594,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.failed"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.failed"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -74701,10 +74614,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.cancelling"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.cancelling"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -74724,10 +74634,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.cancelled"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.cancelled"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -74747,10 +74654,7 @@
             "properties": {
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.run.expired"
-                ],
-                "x-stainless-const": true
+                "const": "thread.run.expired"
               },
               "data": {
                 "$ref": "#/components/schemas/RunObject"
@@ -75210,10 +75114,7 @@
               },
               "event": {
                 "type": "string",
-                "enum": [
-                  "thread.created"
-                ],
-                "x-stainless-const": true
+                "const": "thread.created"
               },
               "data": {
                 "$ref": "#/components/schemas/ThreadObject"
@@ -77153,10 +77054,7 @@
             "properties": {
               "object": {
                 "type": "string",
-                "enum": [
-                  "user"
-                ],
-                "x-stainless-const": true
+                "const": "user"
               },
               "id": {
                 "type": "string"
@@ -77288,10 +77186,7 @@
                 "properties": {
                   "object": {
                     "type": "string",
-                    "enum": [
-                      "list"
-                    ],
-                    "x-stainless-const": true
+                    "const": "list"
                   },
                   "data": {
                     "type": "array",
@@ -89940,6 +89835,18 @@
               }
             ]
           },
+          "safety_identifier": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "description": "A stable identifier used for safety monitoring and abuse detection."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "items": {
             "anyOf": [
               {
@@ -100070,7 +99977,7 @@
             },
             "minItems": 0,
             "maxItems": 16384,
-            "description": "Tools available to the agent. Omit to inherit, or pass null to clear them. The resolved tool list must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON."
+            "description": "Tools available to the agent. Omit to inherit, or pass null to clear them. The resolved tool list must fit within 8 MiB (8,388,608 bytes) of compact UTF-8 JSON."
           }
         },
         "additionalProperties": false,
