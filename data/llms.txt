@@ -1,5 +1,5 @@
 # API Drift Preemption Wire
-> Last updated: 2026-11-27T08:47:30.662539+00:00 UTC | Upstream Contract Mutation Radar for AI Agents
+> Last updated: 2026-11-27T21:27:06.525664+00:00 UTC | Upstream Contract Mutation Radar for AI Agents
 > Ingest dedicated endpoints per service at data/services/{slug}/today.json
 
 ## Tracked Cloud Service Status
